@@ -6,18 +6,19 @@ export default function Home() {
   return (
     <NotebookLayout className="flex flex-col items-center justify-center text-center space-y-8 sm:space-y-12">
       <div className="space-y-4">
-        <h1 className="text-4xl sm:text-6xl font-bold tracking-tighter font-handwriting border-b-4 border-neon-yellow inline-block pb-2">
-          VibeType 16
+        <h1 className="text-3xl sm:text-5xl font-bold tracking-tighter font-handwriting border-b-4 border-neon-yellow inline-block pb-2">
+          16コミュニケーションタイプ診断
         </h1>
         <p className="text-xl sm:text-2xl font-bold mt-4">
-          あなたの『空気感』には、名前がある。
+          あなたの『会話スタイル』には、名前がある。
         </p>
       </div>
 
       <div className="max-w-md mx-auto p-6 border-2 border-ink bg-white/50 rotate-1 shadow-sm">
         <p className="text-sm sm:text-base leading-relaxed font-medium">
-          クラスや職場に必ず生息する16種類のキャラ属性図鑑。<br />
-          あなたが無意識に放っているVibe（波長）を特定する成分分析。
+          性格の良し悪しではなく、<br />
+          あなたが無意識に使っている「会話の型」を可視化する。<br />
+          自分と相手のスタイルを知るための成分分析。
         </p>
       </div>
 

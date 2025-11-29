@@ -7,23 +7,17 @@ export type Answers = Record<number, number>;
 export function calculateScores(answers: Answers): AxisResult[] {
     const scores = {
         Power: 0,
-        Temperature: 0,
+        Warmth: 0,
         Speed: 0,
         Volume: 0,
     };
 
     QUESTIONS.forEach((q) => {
         const answer = answers[q.id] || 0;
-        // If reversed, positive answer adds to negative pole (subtracts from score)
-        // If not reversed, positive answer adds to positive pole (adds to score)
-        // Actually, let's define:
-        // Positive Pole (+): D, E, I, X
-        // Negative Pole (-): R, C, S, Z
-        // Score range per axis: -14 to +14
-
-        // If q.reversed is false: +2 means +2 to score.
-        // If q.reversed is true: +2 means -2 to score.
-        const value = q.reversed ? -answer : answer;
+        // q.direction is +1 or -1
+        // answer is -2 to +2
+        // score contribution = answer * direction
+        const value = answer * q.direction;
         scores[q.axis] += value;
     });
 
@@ -36,17 +30,17 @@ export function calculateScores(answers: Answers): AxisResult[] {
             labelNegative: 'Reception',
         },
         {
-            axis: 'Temperature',
-            score: scores.Temperature,
-            percentage: calculatePercentage(scores.Temperature),
-            labelPositive: 'Emotion',
+            axis: 'Warmth',
+            score: scores.Warmth,
+            percentage: calculatePercentage(scores.Warmth),
+            labelPositive: 'Emotional',
             labelNegative: 'Cool',
         },
         {
             axis: 'Speed',
             score: scores.Speed,
             percentage: calculatePercentage(scores.Speed),
-            labelPositive: 'Impulsive',
+            labelPositive: 'Instant',
             labelNegative: 'Steady',
         },
         {
@@ -54,7 +48,7 @@ export function calculateScores(answers: Answers): AxisResult[] {
             score: scores.Volume,
             percentage: calculatePercentage(scores.Volume),
             labelPositive: 'Expressive',
-            labelNegative: 'Zero',
+            labelNegative: 'Zero-ish',
         },
     ];
 }
@@ -70,14 +64,14 @@ function calculatePercentage(score: number): number {
 
 export function determineCharacter(axisResults: AxisResult[]): Character {
     // Generate 4-letter code
-    // Power: >0 -> D, <=0 -> R
-    // Temperature: >0 -> E, <=0 -> C
-    // Speed: >0 -> I, <=0 -> S
-    // Volume: >0 -> X, <=0 -> Z
+    // Power: >=0 -> D, <0 -> R
+    // Warmth: >=0 -> E, <0 -> C
+    // Speed: >=0 -> I, <0 -> S
+    // Volume: >=0 -> X, <0 -> Z
 
     const code = axisResults.map(r => {
-        if (r.axis === 'Power') return r.score >= 0 ? 'D' : 'R'; // Bias towards D if 0? Let's say >= 0 is Positive pole
-        if (r.axis === 'Temperature') return r.score >= 0 ? 'E' : 'C';
+        if (r.axis === 'Power') return r.score >= 0 ? 'D' : 'R';
+        if (r.axis === 'Warmth') return r.score >= 0 ? 'E' : 'C';
         if (r.axis === 'Speed') return r.score >= 0 ? 'I' : 'S';
         if (r.axis === 'Volume') return r.score >= 0 ? 'X' : 'Z';
         return '';

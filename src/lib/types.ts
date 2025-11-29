@@ -1,16 +1,17 @@
-export type AxisType = 'Power' | 'Temperature' | 'Speed' | 'Volume';
+export type AxisType = 'Power' | 'Warmth' | 'Speed' | 'Volume';
 
 export interface Question {
     id: number;
     text: string;
     axis: AxisType;
-    reversed: boolean; // If true, positive answer adds to the 'negative' pole (e.g., R, C, S, Z)
+    direction: 1 | -1; // +1: Positive Pole (D, E, I, X), -1: Negative Pole (R, C, S, Z)
 }
 
 export interface Character {
     code: string;
     name: string;
-    catchphrase: string;
+    catchphrase?: string; // Optional now as we use shortDescription
+    shortDescription: string;
     description: string;
 }
 
