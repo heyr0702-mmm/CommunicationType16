@@ -9,7 +9,7 @@ import { ProgressBar } from "@/components/ui/ProgressBar";
 import { calculateScores, determineCharacter, Answers } from "@/lib/logic";
 import { CommunicationTypeMeta, AxisResult } from "@/lib/types";
 import { RESULT_CONTENTS } from "@/data/contents";
-import { ResultContent } from "@/types/content";
+import { ResultContent as ResultContentData } from "@/types/content";
 import { AdUnit } from "@/components/AdUnit";
 import { ChevronDown, ChevronUp, Lock } from "lucide-react";
 
@@ -18,7 +18,7 @@ function ResultContent() {
     const router = useRouter();
     const [character, setCharacter] = useState<CommunicationTypeMeta | null>(null);
     const [axisResults, setAxisResults] = useState<AxisResult[]>([]);
-    const [content, setContent] = useState<ResultContent | null>(null);
+    const [content, setContent] = useState<ResultContentData | null>(null);
     const [isUnlocked, setIsUnlocked] = useState(false);
 
     useEffect(() => {
