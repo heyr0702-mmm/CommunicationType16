@@ -46,7 +46,7 @@ export const NotebookLayout: React.FC<NotebookLayoutProps> = ({ children, classN
                         </Link>
                     </div>
                     <p className="text-[10px] text-gray-400 mt-2">
-                        © 2024 CommunicationType16
+                        © 2025 CommunicationType16
                     </p>
                 </div>
             </div>

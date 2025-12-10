@@ -36,15 +36,15 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="space-y-6 z-10 w-full max-w-xs">
-        <Link href="/diagnosis" className="block transform hover:scale-105 transition-transform duration-200">
+      <div className="space-y-6 z-10 w-full max-w-sm flex flex-col items-center">
+        <Link href="/diagnosis" className="block w-full transform hover:scale-105 transition-transform duration-200">
           <Button size="lg" className="w-full text-xl py-8 animate-pulse shadow-xl border-2 border-black bg-black text-white hover:bg-gray-800 relative overflow-hidden group">
             <span className="relative z-10">診断スタート</span>
             <div className="absolute inset-0 bg-neon-blue opacity-0 group-hover:opacity-20 transition-opacity" />
           </Button>
         </Link>
 
-        <div className="flex justify-center gap-6 mt-8">
+        <div className="flex justify-center w-full mt-8">
           <Link href="/about">
             <span className="text-sm font-bold text-gray-500 hover:text-neon-pink transition-colors border-b-2 border-transparent hover:border-neon-pink pb-1">
               About & Vision
