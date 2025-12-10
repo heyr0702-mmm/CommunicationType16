@@ -61,21 +61,21 @@ function ResultContent() {
                 {/* Tape decoration */}
                 <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 w-32 h-8 bg-white/50 border-l border-r border-gray-200 rotate-[-2deg] z-10 opacity-70"></div>
 
+                {/* Character Image - Moved to Top */}
+                <div className="flex justify-center -mt-4 mb-4 relative z-20">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                        src={`/images/characters/${character.code}.png`}
+                        alt={character.label}
+                        className="w-56 h-56 sm:w-72 sm:h-72 object-contain filter drop-shadow-xl animate-in fade-in zoom-in duration-500 hover:scale-105 transition-transform"
+                        onError={(e) => {
+                            (e.target as HTMLImageElement).style.display = 'none';
+                        }}
+                    />
+                </div>
+
                 <div className="text-center space-y-4 mb-8">
                     <p className="text-sm font-bold text-gray-500 tracking-widest">COMMUNICATION TYPE</p>
-
-                    {/* Character Image Placeholder */}
-                    <div className="flex justify-center mb-6">
-                        {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <img
-                            src={`/images/characters/${character.code}.png`}
-                            alt={character.label}
-                            className="w-48 h-48 sm:w-64 sm:h-64 object-contain mx-auto animate-in fade-in zoom-in duration-500"
-                            onError={(e) => {
-                                (e.target as HTMLImageElement).style.display = 'none';
-                            }}
-                        />
-                    </div>
 
                     <h1 className="text-4xl sm:text-6xl font-bold font-handwriting tracking-widest text-ink inline-block border-b-4 border-neon-pink pb-2">
                         {character.label}
