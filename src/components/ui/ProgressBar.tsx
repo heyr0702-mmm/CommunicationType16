@@ -33,7 +33,10 @@ export const ProgressBar: React.FC<ProgressBarProps> = ({
                 {/* Grid lines overlay for 'ruler' look */}
                 <div className="absolute inset-0 flex justify-between px-2 pointer-events-none">
                     {[...Array(9)].map((_, i) => (
-                        <div key={i} className="h-full w-px bg-ink opacity-20" />
+                        <div
+                            key={i}
+                            className={`h-full w-px ${i === 4 ? 'bg-black opacity-50 w-0.5' : 'bg-ink opacity-20'}`}
+                        />
                     ))}
                 </div>
             </div>
