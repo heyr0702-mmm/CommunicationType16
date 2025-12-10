@@ -67,7 +67,9 @@ function ResultContent() {
                     <img
                         src={`/images/characters/${character.code}.png`}
                         alt={character.label}
-                        className="w-56 h-56 sm:w-72 sm:h-72 object-contain filter drop-shadow-xl animate-in fade-in zoom-in duration-500 hover:scale-105 transition-transform"
+                        // Increased size as requested: w-72 (mobile) to w-96 (PC)
+                        className="w-72 h-72 sm:w-96 sm:h-96 object-contain filter drop-shadow-xl animate-in fade-in zoom-in duration-500 hover:scale-105 transition-transform"
+                        loading="eager" // Force immediate loading
                         onError={(e) => {
                             (e.target as HTMLImageElement).style.display = 'none';
                         }}

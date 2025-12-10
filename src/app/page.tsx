@@ -6,9 +6,7 @@ export default function Home() {
   return (
     <NotebookLayout className="flex flex-col items-center justify-center text-center space-y-8 sm:space-y-12 relative overflow-hidden">
       {/* Decorative Tapes */}
-      <div className="absolute top-4 right-[-20px] bg-neon-yellow/60 w-32 h-8 rotate-[25deg] shadow-sm z-0 pointer-events-none" />
-      <div className="absolute top-12 left-[-20px] bg-neon-pink/60 w-40 h-6 rotate-[-15deg] shadow-sm z-0 pointer-events-none" />
-      <div className="absolute bottom-20 right-[-30px] bg-neon-blue/60 w-36 h-10 rotate-[10deg] shadow-sm z-0 pointer-events-none" />
+
 
       <div className="space-y-6 z-10 relative">
         {/* Sticker-like Container */}
