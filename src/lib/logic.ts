@@ -55,12 +55,13 @@ export function calculateScores(answers: Answers): AxisResult[] {
 }
 
 function calculatePercentage(score: number): number {
-    // Score range: -14 to +14
-    // Map to 0 to 100
-    // -14 -> 0
-    // 0 -> 50
-    // +14 -> 100
-    return Math.round(((score + 14) / 28) * 100);
+    // Original Range: -14 to +14.
+    // New Sensitivity: -10 to +10 counts as 0% to 100%.
+    // This allows "strong tendencies" to appear as max even with slight contradictions.
+    const maxScore = 10;
+    const clampedScore = Math.max(-maxScore, Math.min(maxScore, score));
+
+    return Math.round(((clampedScore + maxScore) / (maxScore * 2)) * 100);
 }
 
 export function determineCharacter(axisResults: AxisResult[]): CommunicationTypeMeta {

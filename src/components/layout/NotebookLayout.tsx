@@ -41,9 +41,9 @@ export const NotebookLayout: React.FC<NotebookLayoutProps> = ({ children, classN
                             プライバシーポリシー
                         </Link>
                         <span>|</span>
-                        <a href="mailto:contact@communicationType16.example.com" className="hover:text-neon-blue transition-colors">
-                            お問い合わせ
-                        </a>
+                        <Link href="/terms" className="hover:text-neon-blue transition-colors">
+                            利用規約
+                        </Link>
                     </div>
                     <p className="text-[10px] text-gray-400 mt-2">
                         © 2024 CommunicationType16
