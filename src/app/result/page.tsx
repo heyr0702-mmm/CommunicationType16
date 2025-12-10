@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/Button";
 import { ProgressBar } from "@/components/ui/ProgressBar";
 import { calculateScores, determineCharacter, Answers } from "@/lib/logic";
 import { CommunicationTypeMeta, AxisResult } from "@/lib/types";
+import { COMMUNICATION_TYPE_META } from "@/lib/constants";
 import { RESULT_CONTENTS } from "@/data/contents";
 import { ResultContent as ResultContentData } from "@/types/content";
 import { AdUnit } from "@/components/AdUnit";
@@ -62,6 +63,20 @@ function ResultContent() {
 
                 <div className="text-center space-y-4 mb-8">
                     <p className="text-sm font-bold text-gray-500 tracking-widest">COMMUNICATION TYPE</p>
+
+                    {/* Character Image Placeholder */}
+                    <div className="flex justify-center mb-6">
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img
+                            src={`/images/characters/${character.code}.png`}
+                            alt={character.label}
+                            className="w-48 h-48 sm:w-64 sm:h-64 object-contain mx-auto animate-in fade-in zoom-in duration-500"
+                            onError={(e) => {
+                                (e.target as HTMLImageElement).style.display = 'none';
+                            }}
+                        />
+                    </div>
+
                     <h1 className="text-4xl sm:text-6xl font-bold font-handwriting tracking-widest text-ink inline-block border-b-4 border-neon-pink pb-2">
                         {character.label}
                     </h1>
@@ -201,12 +216,22 @@ function ResultContent() {
                             <div className="grid gap-4 sm:grid-cols-2">
                                 <div className="bg-blue-50 p-4 rounded border border-blue-100">
                                     <span className="text-xs font-bold bg-blue-200 text-blue-800 px-2 py-1 rounded mb-2 inline-block">BEST</span>
-                                    <p className="text-lg font-bold text-blue-900 mb-2">{content.unlocked.compatibility.best.code}</p>
+                                    <div className="mb-2">
+                                        <p className="text-lg font-bold text-blue-900 leading-none">{content.unlocked.compatibility.best.code}</p>
+                                        <p className="text-sm font-bold text-blue-700 mt-1">
+                                            {COMMUNICATION_TYPE_META.find(c => c.code === content.unlocked.compatibility.best.code)?.label}
+                                        </p>
+                                    </div>
                                     <p className="text-sm text-blue-800 leading-relaxed">{content.unlocked.compatibility.best.reason}</p>
                                 </div>
                                 <div className="bg-gray-50 p-4 rounded border border-gray-200">
                                     <span className="text-xs font-bold bg-gray-200 text-gray-800 px-2 py-1 rounded mb-2 inline-block">WORST</span>
-                                    <p className="text-lg font-bold text-gray-900 mb-2">{content.unlocked.compatibility.worst.code}</p>
+                                    <div className="mb-2">
+                                        <p className="text-lg font-bold text-gray-900 leading-none">{content.unlocked.compatibility.worst.code}</p>
+                                        <p className="text-sm font-bold text-gray-700 mt-1">
+                                            {COMMUNICATION_TYPE_META.find(c => c.code === content.unlocked.compatibility.worst.code)?.label}
+                                        </p>
+                                    </div>
                                     <p className="text-sm text-gray-800 leading-relaxed">{content.unlocked.compatibility.worst.reason}</p>
                                 </div>
                             </div>
