@@ -83,6 +83,75 @@ export default function Home() {
         </div>
       </section>
 
+      {/* --- Section 1.5: 4 Axes (Analysis Criteria) --- */}
+      <section className="py-16 border-t border-dashed border-gray-300">
+        <div className="max-w-3xl mx-auto space-y-8 px-4">
+          <div className="text-center">
+            <span className="bg-black text-white px-2 py-1 text-sm font-bold transform rotate-1 inline-block mb-4">Analysis Axes</span>
+            <h2 className="text-2xl sm:text-3xl font-bold font-handwriting mb-6">
+              分析する<br className="block sm:hidden" />4つの成分
+            </h2>
+            <p className="text-sm font-medium text-gray-600 mb-8">
+              あなたの会話を構成する4つの要素と、<br className="block sm:hidden" />それぞれの傾向を分析します。
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            {/* Power */}
+            <div className="bg-white p-5 notebook-border relative overflow-hidden group">
+              <div className="absolute top-0 right-0 w-16 h-16 bg-neon-yellow/10 rounded-bl-full -mr-8 -mt-8 transition-transform group-hover:scale-150" />
+              <h3 className="font-bold text-lg mb-2 flex items-center">
+                <span className="mr-2 text-2xl">⚡</span>
+                Power (主導権)
+              </h3>
+              <p className="text-xs font-bold text-gray-400 mb-2 uppercase tracking-wider">Lead vs Follow</p>
+              <p className="text-sm text-gray-700 leading-relaxed">
+                会話のハンドルを握る力。「自分が決めるか、相手に任せるか」のバランスを見ます。
+              </p>
+            </div>
+
+            {/* Warmth */}
+            <div className="bg-white p-5 notebook-border relative overflow-hidden group">
+              <div className="absolute top-0 right-0 w-16 h-16 bg-neon-pink/10 rounded-bl-full -mr-8 -mt-8 transition-transform group-hover:scale-150" />
+              <h3 className="font-bold text-lg mb-2 flex items-center">
+                <span className="mr-2 text-2xl">❤️</span>
+                Warmth (温度感)
+              </h3>
+              <p className="text-xs font-bold text-gray-400 mb-2 uppercase tracking-wider">Logic vs Emotion</p>
+              <p className="text-sm text-gray-700 leading-relaxed">
+                共感や感情の豊かさ。「論理立てて話すか、感情を優先して話すか」の傾向です。
+              </p>
+            </div>
+
+            {/* Speed */}
+            <div className="bg-white p-5 notebook-border relative overflow-hidden group">
+              <div className="absolute top-0 right-0 w-16 h-16 bg-neon-blue/10 rounded-bl-full -mr-8 -mt-8 transition-transform group-hover:scale-150" />
+              <h3 className="font-bold text-lg mb-2 flex items-center">
+                <span className="mr-2 text-2xl">🚀</span>
+                Speed (テンポ)
+              </h3>
+              <p className="text-xs font-bold text-gray-400 mb-2 uppercase tracking-wider">Fast vs Slow</p>
+              <p className="text-sm text-gray-700 leading-relaxed">
+                会話のスピード感。「即レスで返すか、じっくり考えて返すか」のリズムを測定します。
+              </p>
+            </div>
+
+            {/* Volume */}
+            <div className="bg-white p-5 notebook-border relative overflow-hidden group">
+              <div className="absolute top-0 right-0 w-16 h-16 bg-gray-200/50 rounded-bl-full -mr-8 -mt-8 transition-transform group-hover:scale-150" />
+              <h3 className="font-bold text-lg mb-2 flex items-center">
+                <span className="mr-2 text-2xl">🔊</span>
+                Volume (主張)
+              </h3>
+              <p className="text-xs font-bold text-gray-400 mb-2 uppercase tracking-wider">Assertive vs Receptive</p>
+              <p className="text-sm text-gray-700 leading-relaxed">
+                自己主張の強さ。「はっきり意見を言うか、相手の空気を読んで察するか」のスタンスです。
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* --- Section 2: Vision (Why we made this) --- */}
       <section className="py-16 bg-gray-50/80 -mx-6 sm:-mx-12 px-6 sm:px-12 border-t border-b border-dashed border-gray-300">
         <div className="max-w-2xl mx-auto space-y-8">
