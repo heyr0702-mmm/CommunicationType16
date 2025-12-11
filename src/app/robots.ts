@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
             allow: '/',
             disallow: '/private/',
         },
-        sitemap: 'https://vibetype16.vercel.app/sitemap.xml',
+        sitemap: 'https://communicationtype16.vercel.app/sitemap.xml',
     };
 }
