@@ -52,7 +52,7 @@ export function ResultView() {
     }
 
     const shareText = `私のコミュタイプは【${character.label}】でした！\nキャッチコピー: ${content.free.catchCopy}\n\n#16コミュニケーションタイプ診断`;
-    const shareUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent("https://vibetype16.vercel.app")}`;
+    const shareUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent("https://communicationtype16.vercel.app/")}`;
 
     return (
         <NotebookLayout className="flex flex-col space-y-8 pb-20">
@@ -167,7 +167,7 @@ export function ResultView() {
                                 X (Twitter) でシェア
                             </Button>
                         </a>
-                        <a href={`https://line.me/R/msg/text/?${encodeURIComponent(shareText + "\n" + "https://vibetype16.vercel.app")}`} target="_blank" rel="noopener noreferrer" className="inline-block w-full sm:w-auto">
+                        <a href={`https://line.me/R/msg/text/?${encodeURIComponent(shareText + "\n" + "https://communicationtype16.vercel.app/")}`} target="_blank" rel="noopener noreferrer" className="inline-block w-full sm:w-auto">
                             <Button size="lg" className="w-full sm:w-auto bg-[#06C755] text-white border-[#06C755] hover:bg-[#05b34c] shadow-md">
                                 LINE で送る
                             </Button>
@@ -176,7 +176,7 @@ export function ResultView() {
                             size="lg"
                             className="w-full sm:w-auto bg-gray-200 text-gray-800 border-gray-300 hover:bg-gray-300 shadow-md"
                             onClick={() => {
-                                navigator.clipboard.writeText(shareText + "\n" + "https://vibetype16.vercel.app");
+                                navigator.clipboard.writeText(shareText + "\n" + "https://communicationtype16.vercel.app/");
                                 alert("リンクをコピーしました！");
                             }}
                         >

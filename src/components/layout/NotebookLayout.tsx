@@ -36,6 +36,9 @@ export const NotebookLayout: React.FC<NotebookLayoutProps> = ({ children, classN
                         <Link href="/" className="hover:text-neon-blue transition-colors">
                             TOP
                         </Link>
+                        <Link href="/types" className="hover:text-neon-blue transition-colors">
+                            タイプ一覧
+                        </Link>
                         <span>|</span>
                         <Link href="/privacy-policy" className="hover:text-neon-blue transition-colors">
                             プライバシーポリシー

@@ -31,7 +31,10 @@ export default function Home() {
             <p className="text-sm sm:text-base leading-relaxed font-medium text-gray-800">
               性格じゃない。<br />
               『どう喋るか・どう関わるか』のスタイルを<br className="hidden sm:block" />
-              16タイプで可視化します。
+              16タイプで可視化します。<br />
+              <Link href="/types" className="text-xs text-gray-500 underline hover:text-neon-pink mt-2 inline-block">
+                ▷ 全タイプ一覧を見る
+              </Link>
             </p>
           </div>
         </div>
