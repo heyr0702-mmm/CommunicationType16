@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from 'react';
+import Image from 'next/image';
 
 interface TypeCardProps {
     code: string;
@@ -15,11 +16,12 @@ export const TypeCard: React.FC<TypeCardProps> = ({ code, label, catchCopy }) =>
         <div className="bg-white p-6 notebook-border flex flex-col items-center text-center space-y-4 hover:bg-gray-50 transition-colors">
             {/* Character Image */}
             <div className="w-32 h-32 relative">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
+                <Image
                     src={imgSrc}
                     alt={label}
-                    className="w-full h-full object-contain filter drop-shadow-md"
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    className="object-contain filter drop-shadow-md"
                     loading="lazy"
                     onError={() => {
                         setImgSrc('https://placehold.co/200x200/png?text=No+Image');

@@ -39,21 +39,17 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="space-y-6 z-10 w-full max-w-sm flex flex-col items-center">
-          <Link href="/diagnosis" className="block w-full transform hover:scale-105 transition-transform duration-200">
-            <Button size="lg" className="w-full text-xl py-8 animate-pulse shadow-xl border-2 border-black bg-black text-white hover:bg-gray-800 relative overflow-hidden group">
-              <span className="relative z-10">診断スタート</span>
-              <div className="absolute inset-0 bg-neon-blue opacity-0 group-hover:opacity-20 transition-opacity" />
+        <div className="space-y-4 w-full max-w-sm flex flex-col items-center">
+          <Link href="/diagnosis" className="w-full">
+            <Button size="lg" className="w-full text-xl py-8 animate-pulse shadow-xl border-2 border-black bg-black text-white hover:bg-gray-800">
+              診断スタート
             </Button>
           </Link>
-
-          <div className="flex justify-center w-full mt-8">
-            <Link href="/about">
-              <span className="text-sm font-bold text-gray-500 hover:text-neon-pink transition-colors border-b-2 border-transparent hover:border-neon-pink pb-1">
-                About & Vision
-              </span>
-            </Link>
-          </div>
+          <Link href="/types" className="w-full">
+            <Button variant="secondary" size="lg" className="w-full border-2 border-black bg-white text-black hover:bg-gray-100">
+              全タイプ一覧を見る
+            </Button>
+          </Link>
         </div>
       </section>
 
@@ -222,9 +218,9 @@ export default function Home() {
           </div>
 
           <div className="pt-12 text-center">
-            <Link href="/diagnosis" className="block w-full transform hover:scale-105 transition-transform duration-200 max-w-xs mx-auto">
-              <Button size="lg" className="w-full text-lg animate-pulse shadow-xl border-2 border-black bg-black text-white hover:bg-gray-800">
-                もう一度、診断する
+            <Link href="/diagnosis">
+              <Button size="lg" className="animate-pulse shadow-xl border-2 border-black bg-black text-white hover:bg-gray-800 px-8 py-6 text-xl">
+                診断する
               </Button>
             </Link>
           </div>
