@@ -25,6 +25,17 @@ body {
     linear-gradient(90deg, #e5e5e5 1px, transparent 1px);
   background-size: 20px 20px;
   min-height: 100vh;
+  /* Improve text wrapping on mobile */
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+/* Improve typography for Japanese text */
+p,
+li {
+  text-wrap: pretty;
+  word-break: break-word;
+  /* Allows breaking words if necessary to prevent overflow */
 }
 
 /* Custom Utilities for Profile Book Look */
