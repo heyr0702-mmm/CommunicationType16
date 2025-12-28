@@ -13,7 +13,7 @@ export const TypeCard: React.FC<TypeCardProps> = ({ code, label, catchCopy }) =>
     const [imgSrc, setImgSrc] = useState(`/images/characters/${code}.png`);
 
     return (
-        <div className="bg-white p-6 notebook-border flex flex-col items-center text-center space-y-4 hover:bg-gray-50 transition-colors">
+        <div className="bg-white p-4 sm:p-6 notebook-border flex flex-col items-center text-center space-y-4 hover:bg-gray-50 transition-colors">
             {/* Character Image */}
             <div className="w-32 h-32 relative">
                 <Image

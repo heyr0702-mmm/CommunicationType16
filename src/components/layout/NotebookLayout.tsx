@@ -14,7 +14,7 @@ export const NotebookLayout: React.FC<NotebookLayoutProps> = ({ children, classN
         bg-paper 
         notebook-border 
         relative 
-        p-6 sm:p-12
+        p-4 sm:p-12
         min-h-[80vh]
         ${className}
       `}>

@@ -69,7 +69,7 @@ export default function Diagnosis() {
             {/* Question */}
             <div key={currentQuestionIndex} className="flex-grow flex items-center justify-center py-8 sm:py-12 min-h-[200px]">
                 <div className="bg-white/90 p-8 rounded-lg notebook-border shadow-lg w-full flex items-center justify-center text-center animate-in fade-in slide-in-from-bottom-4 duration-500">
-                    <h2 className="font-bold leading-relaxed text-lg sm:text-3xl">
+                    <h2 className="font-bold leading-relaxed text-sm sm:text-3xl">
                         {currentQuestion.text.split('\n').map((line, i) => (
                             <span key={i} className="block mb-2 sm:mb-0 sm:inline">{line}<br className="block sm:hidden" /></span>
                         ))}

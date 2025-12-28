@@ -18,10 +18,10 @@ export default function Home() {
               New!
             </div>
 
-            <h1 className="text-3xl sm:text-5xl font-bold tracking-tighter font-handwriting text-ink mb-6 leading-tight">
+            <h1 className="text-2xl sm:text-5xl font-bold tracking-tighter font-handwriting text-ink mb-6 leading-tight">
               16コミュニケーション<br className="block sm:hidden" />タイプ診断
             </h1>
-            <p className="text-sm sm:text-lg font-bold text-gray-700 bg-neon-yellow/30 inline-block px-4 py-1 leading-relaxed">
+            <p className="text-xs sm:text-lg font-bold text-gray-700 bg-neon-yellow/30 inline-block px-4 py-1 leading-relaxed">
               あなたの“コミュ力の型”には、<br className="block sm:hidden" />名前がある。
             </p>
           </div>

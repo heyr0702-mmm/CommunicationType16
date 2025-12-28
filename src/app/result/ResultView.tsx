@@ -89,7 +89,7 @@ export function ResultView() {
                 <div className="text-center space-y-4 mb-8">
                     <p className="text-sm font-bold text-gray-500 tracking-widest">COMMUNICATION TYPE</p>
 
-                    <h1 className="text-4xl sm:text-6xl font-bold font-handwriting tracking-widest text-ink inline-block border-b-4 border-neon-pink pb-2">
+                    <h1 className="text-2xl sm:text-6xl font-bold font-handwriting tracking-widest text-ink inline-block border-b-4 border-neon-pink pb-2">
                         {character.label}
                     </h1>
                     <div className="flex flex-wrap justify-center gap-2 mt-2">
@@ -99,7 +99,7 @@ export function ResultView() {
                             </span>
                         ))}
                     </div>
-                    <p className="text-lg sm:text-xl font-bold mt-4 bg-neon-yellow/40 inline-block px-4 py-1 rounded-sm">
+                    <p className="text-sm sm:text-lg font-medium mt-4 bg-neon-yellow/40 inline-block px-4 py-1 rounded-sm">
                         {content.free.catchCopy}
                     </p>
                 </div>
