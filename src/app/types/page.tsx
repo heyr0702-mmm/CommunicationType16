@@ -23,12 +23,13 @@ export default function TypeList() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 {COMMUNICATION_TYPE_META.map((type) => (
-                    <TypeCard
-                        key={type.code}
-                        code={type.code}
-                        label={type.label}
-                        catchCopy={type.catchCopy}
-                    />
+                    <Link key={type.code} href={`/result?code=${type.code}`} className="block hover:no-underline">
+                        <TypeCard
+                            code={type.code}
+                            label={type.label}
+                            catchCopy={type.catchCopy}
+                        />
+                    </Link>
                 ))}
             </div>
 

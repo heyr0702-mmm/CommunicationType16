@@ -26,7 +26,8 @@ body {
   background-size: 20px 20px;
   min-height: 100vh;
   /* Improve text wrapping on mobile */
-  overflow-wrap: break-word;
+  overflow-wrap: anywhere;
+  word-break: keep-all;
   word-wrap: break-word;
 }
 

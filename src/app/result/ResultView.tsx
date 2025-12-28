@@ -24,21 +24,31 @@ export function ResultView() {
 
     useEffect(() => {
         const data = searchParams.get("data");
-        if (!data) {
-            router.push("/");
-            return;
-        }
+        const code = searchParams.get("code");
 
-        try {
-            const answers: Answers = JSON.parse(decodeURIComponent(data));
-            const results = calculateScores(answers);
-            const char = determineCharacter(results);
+        if (data) {
+            try {
+                const answers: Answers = JSON.parse(decodeURIComponent(data));
+                const results = calculateScores(answers);
+                const char = determineCharacter(results);
 
-            setAxisResults(results);
-            setCharacter(char);
-            setContent(RESULT_CONTENTS[char.code] || RESULT_CONTENTS["DEIX"]); // Fallback to DEIX if not found
-        } catch (error) {
-            console.error("Error parsing result data:", error);
+                setAxisResults(results);
+                setCharacter(char);
+                setContent(RESULT_CONTENTS[char.code] || RESULT_CONTENTS["DEIX"]);
+            } catch (error) {
+                console.error("Error parsing result data:", error);
+                router.push("/");
+            }
+        } else if (code) {
+            const char = COMMUNICATION_TYPE_META.find(c => c.code === code);
+            if (char) {
+                setCharacter(char);
+                setAxisResults([]); // No graph for direct access
+                setContent(RESULT_CONTENTS[char.code] || RESULT_CONTENTS["DEIX"]);
+            } else {
+                router.push("/");
+            }
+        } else {
             router.push("/");
         }
     }, [searchParams, router]);
@@ -94,25 +104,61 @@ export function ResultView() {
                     </p>
                 </div>
 
-                <div className="space-y-6 p-4 border-2 border-dashed border-gray-300 rounded-lg bg-white/50">
-                    <h3 className="text-center font-bold border-b-2 border-gray-300 pb-2 mb-4 font-handwriting text-xl">
-                        成分分析 (Parameter Analysis)
-                    </h3>
-                    {axisResults.map((result) => (
-                        <ProgressBar
-                            key={result.axis}
-                            value={result.percentage}
-                            labelLeft={result.labelNegative}
-                            labelRight={result.labelPositive}
-                            color={
-                                result.axis === 'Power' ? 'yellow' :
-                                    result.axis === 'Warmth' ? 'pink' :
-                                        result.axis === 'Speed' ? 'blue' : 'yellow'
-                            }
-                        />
-                    ))}
+                {axisResults.length > 0 && (
+                    <div className="space-y-6 p-4 border-2 border-dashed border-gray-300 rounded-lg bg-white/50">
+                        <h3 className="text-center font-bold border-b-2 border-gray-300 pb-2 mb-4 font-handwriting text-xl">
+                            成分分析 (Parameter Analysis)
+                        </h3>
+                        {axisResults.map((result) => (
+                            <div key={result.axis}>
+                                <p className="text-xs font-bold text-gray-500 mb-1 text-center">
+                                    {result.axis === 'Power' && 'パワー (主導権)'}
+                                    {result.axis === 'Warmth' && 'ウォーム (温度感)'}
+                                    {result.axis === 'Speed' && 'スピード (テンポ)'}
+                                    {result.axis === 'Volume' && 'ボリューム (主張)'}
+                                </p>
+                                <ProgressBar
+                                    value={result.percentage}
+                                    labelLeft={result.labelNegative}
+                                    labelRight={result.labelPositive}
+                                    color={
+                                        result.axis === 'Power' ? 'yellow' :
+                                            result.axis === 'Warmth' ? 'pink' :
+                                                result.axis === 'Speed' ? 'blue' : 'yellow'
+                                    }
+                                />
+                            </div>
+                        ))}
 
-                    <div className="mt-6 p-4 bg-white rounded border border-gray-200">
+                        <div className="mt-6 p-4 bg-white rounded border border-gray-200">
+                            <p className="text-sm text-gray-600 font-medium leading-relaxed">
+                                {content.free.summary}
+                            </p>
+                        </div>
+                    </div>
+                )}
+
+                {/* Summary only when graph is hidden? No, summary is distinct. But layout checks... 
+                    Actually, if graph is hidden, the summary inside it is also hidden.
+                    Let's move the summary OUTSIDE the conditional block if it's general summary.
+                    Wait, 'content.free.summary' is related to the character description.
+                    If I hide the graph container, I hide the summary too.
+                    Is that intended?
+                    The summary text usually explains the graph or general traits.
+                    If accessible via list, maybe show summary?
+                    "Parameter Analysis" block specifically.
+                    Let's look at content structure.
+                    Summary is "Type Description Summary".
+                    It seems fine to show it even without graph.
+                    So I should move it out or duplicate it.
+                    I will move it OUT of the graph conditional block.
+                */}
+                {/* Summary Section (Always visible) */}
+                <div className="mt-6 p-4 bg-white/50 rounded-lg notebook-border">
+                    <h3 className="text-center font-bold border-b-2 border-gray-300 pb-2 mb-2 font-handwriting text-lg">
+                        特徴まとめ
+                    </h3>
+                    <div className="bg-white p-4 rounded border border-gray-200">
                         <p className="text-sm text-gray-600 font-medium leading-relaxed">
                             {content.free.summary}
                         </p>
