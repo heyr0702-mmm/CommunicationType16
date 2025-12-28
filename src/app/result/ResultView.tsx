@@ -205,31 +205,7 @@ export function ResultView() {
                     </ul>
                 </div>
 
-                <div className="mt-8 text-center space-y-4">
-                    <p className="font-bold text-gray-600 mb-2">結果をシェアする</p>
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                        <a href={shareUrl} target="_blank" rel="noopener noreferrer" className="inline-block w-full sm:w-auto">
-                            <Button size="lg" className="w-full sm:w-auto bg-black text-white border-black hover:bg-gray-800 shadow-md">
-                                X (Twitter) でシェア
-                            </Button>
-                        </a>
-                        <a href={`https://line.me/R/msg/text/?${encodeURIComponent(shareText + "\n" + "https://communicationtype16.vercel.app/")}`} target="_blank" rel="noopener noreferrer" className="inline-block w-full sm:w-auto">
-                            <Button size="lg" className="w-full sm:w-auto bg-[#06C755] text-white border-[#06C755] hover:bg-[#05b34c] shadow-md">
-                                LINE で送る
-                            </Button>
-                        </a>
-                        <Button
-                            size="lg"
-                            className="w-full sm:w-auto bg-gray-200 text-gray-800 border-gray-300 hover:bg-gray-300 shadow-md"
-                            onClick={() => {
-                                navigator.clipboard.writeText(shareText + "\n" + "https://communicationtype16.vercel.app/");
-                                alert("リンクをコピーしました！");
-                            }}
-                        >
-                            リンクをコピー
-                        </Button>
-                    </div>
-                </div>
+
             </div>
 
             {/* 🟡 Unlocked Area (Accordion) */}
@@ -314,6 +290,33 @@ export function ResultView() {
                         </div>
                     </div>
                 )}
+            </div>
+
+            {/* Share Buttons (Moved) */}
+            <div className="mt-8 text-center space-y-4">
+                <p className="font-bold text-gray-600 mb-2">結果をシェアする</p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href={shareUrl} target="_blank" rel="noopener noreferrer" className="inline-block w-full sm:w-auto">
+                        <Button size="lg" className="w-full sm:w-auto bg-black text-white border-black hover:bg-gray-800 shadow-md">
+                            X (Twitter) でシェア
+                        </Button>
+                    </a>
+                    <a href={`https://line.me/R/msg/text/?${encodeURIComponent(shareText + "\n" + "https://communicationtype16.vercel.app/")}`} target="_blank" rel="noopener noreferrer" className="inline-block w-full sm:w-auto">
+                        <Button size="lg" className="w-full sm:w-auto bg-[#06C755] text-white border-[#06C755] hover:bg-[#05b34c] shadow-md">
+                            LINE で送る
+                        </Button>
+                    </a>
+                    <Button
+                        size="lg"
+                        className="w-full sm:w-auto bg-gray-200 text-gray-800 border-gray-300 hover:bg-gray-300 shadow-md"
+                        onClick={() => {
+                            navigator.clipboard.writeText(shareText + "\n" + "https://communicationtype16.vercel.app/");
+                            alert("リンクをコピーしました！");
+                        }}
+                    >
+                        リンクをコピー
+                    </Button>
+                </div>
             </div>
 
             {/* AdUnit before footer */}
