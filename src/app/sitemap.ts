@@ -1,4 +1,5 @@
 import { MetadataRoute } from 'next';
+import { COMMUNICATION_TYPE_META } from '@/lib/constants';
 
 const BASE_url = 'https://communicationtype16.vercel.app';
 
@@ -40,5 +41,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
             changeFrequency: 'yearly',
             priority: 0.3,
         },
+        ...COMMUNICATION_TYPE_META.map((type) => ({
+            url: `${BASE_url}/result?code=${type.code}`,
+            lastModified: new Date(),
+            changeFrequency: 'weekly' as const,
+            priority: 0.8,
+        })),
     ];
 }

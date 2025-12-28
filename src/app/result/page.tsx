@@ -11,6 +11,7 @@ interface Props {
 
 export async function generateMetadata({ searchParams }: Props): Promise<Metadata> {
     const data = searchParams.data;
+    const code = searchParams.code;
     let characterImage = "https://vibetype16.vercel.app/images/ogp-default.png"; // Fallback
     let title = "16コミュニケーションタイプ診断";
     let description = "あなたの会話・コミュニケーションスタイルを16タイプで診断します。";
@@ -28,6 +29,13 @@ export async function generateMetadata({ searchParams }: Props): Promise<Metadat
 
         } catch (e) {
             console.error("Metadata generation error", e);
+        }
+    } else if (typeof code === "string") {
+        const char = COMMUNICATION_TYPE_META.find(c => c.code === code);
+        if (char) {
+            characterImage = `https://vibetype16.vercel.app/images/characters/${char.code}.png`;
+            title = `${char.code}: ${char.label} | 16コミュニケーションタイプ診断`;
+            description = char.catchCopy || description;
         }
     }
 
