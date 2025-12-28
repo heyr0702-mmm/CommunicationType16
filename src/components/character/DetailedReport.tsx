@@ -60,7 +60,7 @@ export const DetailedReport: React.FC<DetailedReportProps> = ({ content, onClose
             </div>
 
             {/* AdUnit after content */}
-            <AdUnit slot="9876543210" />
+            {/* <AdUnit slot="9876543210" /> */}
 
             {/* Optional Close Button (Only for ResultView) */}
             {onClose && (
