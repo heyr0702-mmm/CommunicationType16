@@ -12,7 +12,10 @@ import { COMMUNICATION_TYPE_META } from "@/lib/constants";
 import { RESULT_CONTENTS } from "@/data/contents";
 import { ResultContent as ResultContentData } from "@/types/content";
 import { AdUnit } from "@/components/AdUnit";
-import { ChevronDown, ChevronUp, Lock } from "lucide-react";
+import { Lock } from "lucide-react";
+import { CharacterProfile } from "@/components/character/CharacterProfile";
+import { DetailedReport } from "@/components/character/DetailedReport";
+import { ShareButtons } from "@/components/character/ShareButtons";
 
 export function ResultView() {
     const searchParams = useSearchParams();
@@ -61,51 +64,16 @@ export function ResultView() {
         );
     }
 
-    const shareText = `私のコミュタイプは【${character.label}】でした！\nキャッチコピー: ${content.free.catchCopy}\n\n#16コミュニケーションタイプ診断`;
-    const shareUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent("https://communicationtype16.vercel.app/")}`;
+    // shareText/shareUrl logic moved to ShareButtons component, but if needed elsewhere...
+    // Removed unused logic
+
 
     return (
         <NotebookLayout className="flex flex-col space-y-8 pb-20">
-            {/* 🟢 Free Area */}
-            <div className="bg-white/90 p-6 rounded-lg notebook-border shadow-lg max-w-2xl mx-auto w-full relative overflow-hidden">
-                {/* Tape decoration */}
-                <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 w-32 h-8 bg-white/50 border-l border-r border-gray-200 rotate-[-2deg] z-10 opacity-70"></div>
-
-                {/* Character Image - Moved to Top */}
-                <div className="flex justify-center -mt-4 mb-4 relative z-20">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
-                        src={`/images/characters/${character.code}.png`}
-                        alt={character.label}
-                        // Increased size as requested: w-72 (mobile) to w-96 (PC)
-                        className="w-72 h-72 sm:w-96 sm:h-96 object-contain filter drop-shadow-xl animate-in fade-in zoom-in duration-500 hover:scale-105 transition-transform"
-                        loading="eager" // Force immediate loading
-                        onError={(e) => {
-                            (e.target as HTMLImageElement).style.display = 'none';
-                        }}
-                    />
-                </div>
-
-                <div className="text-center space-y-4 mb-8">
-                    <p className="text-sm font-bold text-gray-500 tracking-widest">COMMUNICATION TYPE</p>
-
-                    <h1 className="text-2xl sm:text-6xl font-bold font-handwriting tracking-widest text-ink inline-block border-b-4 border-neon-pink pb-2">
-                        {character.label}
-                    </h1>
-                    <div className="flex flex-wrap justify-center gap-2 mt-2">
-                        {content.free.hashTags.map(tag => (
-                            <span key={tag} className="text-xs font-bold bg-gray-100 px-2 py-1 rounded text-gray-600">
-                                {tag}
-                            </span>
-                        ))}
-                    </div>
-                    <p className="text-sm sm:text-lg font-medium mt-4 bg-neon-yellow/40 inline-block px-4 py-1 rounded-sm">
-                        {content.free.catchCopy}
-                    </p>
-                </div>
-
+            {/* 🟢 Free Area (Refactored to CharacterProfile) */}
+            <CharacterProfile character={character} content={content}>
                 {axisResults.length > 0 && (
-                    <div className="space-y-6 p-4 border-2 border-dashed border-gray-300 rounded-lg bg-white/50">
+                    <div className="space-y-6 p-4 border-2 border-dashed border-gray-300 rounded-lg bg-white/50 mb-8">
                         <h3 className="text-center font-bold border-b-2 border-gray-300 pb-2 mb-4 font-handwriting text-xl">
                             成分分析 (Parameter Analysis)
                         </h3>
@@ -129,84 +97,9 @@ export function ResultView() {
                                 />
                             </div>
                         ))}
-
-                        <div className="mt-6 p-4 bg-white rounded border border-gray-200">
-                            <p className="text-sm text-gray-600 font-medium leading-relaxed">
-                                {content.free.summary}
-                            </p>
-                        </div>
                     </div>
                 )}
-
-                {/* Summary only when graph is hidden? No, summary is distinct. But layout checks... 
-                    Actually, if graph is hidden, the summary inside it is also hidden.
-                    Let's move the summary OUTSIDE the conditional block if it's general summary.
-                    Wait, 'content.free.summary' is related to the character description.
-                    If I hide the graph container, I hide the summary too.
-                    Is that intended?
-                    The summary text usually explains the graph or general traits.
-                    If accessible via list, maybe show summary?
-                    "Parameter Analysis" block specifically.
-                    Let's look at content structure.
-                    Summary is "Type Description Summary".
-                    It seems fine to show it even without graph.
-                    So I should move it out or duplicate it.
-                    I will move it OUT of the graph conditional block.
-                */}
-                {/* Summary Section (Always visible) */}
-                <div className="mt-6 p-4 bg-white/50 rounded-lg notebook-border">
-                    <h3 className="text-center font-bold border-b-2 border-gray-300 pb-2 mb-2 font-handwriting text-lg">
-                        特徴まとめ
-                    </h3>
-                    <div className="bg-white p-4 rounded border border-gray-200">
-                        <p className="text-sm text-gray-600 font-medium leading-relaxed">
-                            {content.free.summary}
-                        </p>
-                    </div>
-                </div>
-
-                {/* Basic Specs */}
-                <div className="mt-8 space-y-4">
-                    {content.free.basicSpecs.map((spec, i) => (
-                        <div key={i} className="bg-white/80 p-4 rounded border-l-4 border-neon-blue">
-                            <h4 className="font-bold text-ink mb-2">{spec.title}</h4>
-                            <p className="text-sm text-gray-700 leading-relaxed">{spec.description}</p>
-                        </div>
-                    ))}
-                </div>
-
-                {/* Reputation */}
-                <div className="mt-6 bg-white/80 p-4 rounded border-l-4 border-neon-pink">
-                    <h4 className="font-bold text-ink mb-2">{content.free.reputation.title}</h4>
-                    <ul className="list-disc list-inside text-sm text-gray-700 space-y-1">
-                        {content.free.reputation.items.map((item, i) => (
-                            <li key={i}>{item}</li>
-                        ))}
-                    </ul>
-                </div>
-
-                {/* Aruaru */}
-                <div className="mt-6 bg-white/80 p-4 rounded border-l-4 border-neon-yellow">
-                    <h4 className="font-bold text-ink mb-2">{content.free.aruaru.title}</h4>
-                    <ul className="list-disc list-inside text-sm text-gray-700 space-y-1">
-                        {content.free.aruaru.items.map((item, i) => (
-                            <li key={i}>{item}</li>
-                        ))}
-                    </ul>
-                </div>
-
-                {/* Comfort Zone */}
-                <div className="mt-6 bg-white/80 p-4 rounded border-l-4 border-gray-400">
-                    <h4 className="font-bold text-ink mb-2">{content.free.comfortZone.title}</h4>
-                    <ul className="list-disc list-inside text-sm text-gray-700 space-y-1">
-                        {content.free.comfortZone.items.map((item, i) => (
-                            <li key={i}>{item}</li>
-                        ))}
-                    </ul>
-                </div>
-
-
-            </div>
+            </CharacterProfile>
 
             {/* 🟡 Unlocked Area (Accordion) */}
             <div className="max-w-2xl mx-auto w-full">
@@ -232,92 +125,14 @@ export function ResultView() {
                         </div>
                     </div>
                 ) : (
-                    <div className="animate-in fade-in slide-in-from-top-4 duration-500 space-y-8">
-                        {/* Communication Gaps */}
-                        <div className="bg-white/90 p-6 rounded-lg notebook-border shadow-lg">
-                            <div className="flex items-center gap-2 mb-4 border-b-2 border-gray-200 pb-2">
-                                <span className="text-2xl">⚠️</span>
-                                <h3 className="text-xl font-bold text-ink">{content.unlocked.communicationGaps.title}</h3>
-                            </div>
-                            <div className="space-y-4">
-                                {content.unlocked.communicationGaps.items.map((item, i) => (
-                                    <div key={i} className="bg-red-50 p-4 rounded border border-red-100">
-                                        <p className="font-bold text-red-800 mb-1">⚡ {item.pattern}</p>
-                                        <p className="text-sm text-red-600">💡 {item.advice}</p>
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-
-                        {/* Compatibility */}
-                        <div className="bg-white/90 p-6 rounded-lg notebook-border shadow-lg">
-                            <div className="flex items-center gap-2 mb-4 border-b-2 border-gray-200 pb-2">
-                                <span className="text-2xl">💞</span>
-                                <h3 className="text-xl font-bold text-ink">相性分析</h3>
-                            </div>
-                            <div className="grid gap-4 sm:grid-cols-2">
-                                <div className="bg-blue-50 p-4 rounded border border-blue-100">
-                                    <span className="text-xs font-bold bg-blue-200 text-blue-800 px-2 py-1 rounded mb-2 inline-block">BEST</span>
-                                    <div className="mb-2">
-                                        <p className="text-lg font-bold text-blue-900 leading-none">{content.unlocked.compatibility.best.code}</p>
-                                        <p className="text-sm font-bold text-blue-700 mt-1">
-                                            {COMMUNICATION_TYPE_META.find(c => c.code === content.unlocked.compatibility.best.code)?.label}
-                                        </p>
-                                    </div>
-                                    <p className="text-sm text-blue-800 leading-relaxed">{content.unlocked.compatibility.best.reason}</p>
-                                </div>
-                                <div className="bg-gray-50 p-4 rounded border border-gray-200">
-                                    <span className="text-xs font-bold bg-gray-200 text-gray-800 px-2 py-1 rounded mb-2 inline-block">WORST</span>
-                                    <div className="mb-2">
-                                        <p className="text-lg font-bold text-gray-900 leading-none">{content.unlocked.compatibility.worst.code}</p>
-                                        <p className="text-sm font-bold text-gray-700 mt-1">
-                                            {COMMUNICATION_TYPE_META.find(c => c.code === content.unlocked.compatibility.worst.code)?.label}
-                                        </p>
-                                    </div>
-                                    <p className="text-sm text-gray-800 leading-relaxed">{content.unlocked.compatibility.worst.reason}</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        {/* AdUnit after content */}
-                        <AdUnit slot="9876543210" />
-
-                        <div className="text-center">
-                            <Button onClick={() => setIsUnlocked(false)} variant="ghost" size="sm">
-                                <ChevronUp className="mr-2 h-4 w-4" />
-                                閉じる
-                            </Button>
-                        </div>
+                    <div className="animate-in fade-in slide-in-from-top-4 duration-500">
+                        <DetailedReport content={content} onClose={() => setIsUnlocked(false)} />
                     </div>
                 )}
             </div>
 
             {/* Share Buttons (Moved) */}
-            <div className="mt-8 text-center space-y-4">
-                <p className="font-bold text-gray-600 mb-2">結果をシェアする</p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href={shareUrl} target="_blank" rel="noopener noreferrer" className="inline-block w-full sm:w-auto">
-                        <Button size="lg" className="w-full sm:w-auto bg-black text-white border-black hover:bg-gray-800 shadow-md">
-                            X (Twitter) でシェア
-                        </Button>
-                    </a>
-                    <a href={`https://line.me/R/msg/text/?${encodeURIComponent(shareText + "\n" + "https://communicationtype16.vercel.app/")}`} target="_blank" rel="noopener noreferrer" className="inline-block w-full sm:w-auto">
-                        <Button size="lg" className="w-full sm:w-auto bg-[#06C755] text-white border-[#06C755] hover:bg-[#05b34c] shadow-md">
-                            LINE で送る
-                        </Button>
-                    </a>
-                    <Button
-                        size="lg"
-                        className="w-full sm:w-auto bg-gray-200 text-gray-800 border-gray-300 hover:bg-gray-300 shadow-md"
-                        onClick={() => {
-                            navigator.clipboard.writeText(shareText + "\n" + "https://communicationtype16.vercel.app/");
-                            alert("リンクをコピーしました！");
-                        }}
-                    >
-                        リンクをコピー
-                    </Button>
-                </div>
-            </div>
+            <ShareButtons character={character} content={content} />
 
             {/* AdUnit before footer */}
             <AdUnit slot="1122334455" />

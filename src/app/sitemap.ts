@@ -42,7 +42,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
             priority: 0.3,
         },
         ...COMMUNICATION_TYPE_META.map((type) => ({
-            url: `${BASE_url}/result?code=${type.code}`,
+            url: `${BASE_url}/types/${type.code}`,
             lastModified: new Date(),
             changeFrequency: 'weekly' as const,
             priority: 0.8,
