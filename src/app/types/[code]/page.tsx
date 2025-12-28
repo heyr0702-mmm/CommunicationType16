@@ -8,7 +8,9 @@ import { DetailedReport } from "@/components/character/DetailedReport";
 import { ShareButtons } from "@/components/character/ShareButtons";
 import { NotebookLayout } from "@/components/layout/NotebookLayout";
 import { Button } from "@/components/ui/Button";
-import { AdUnit } from "@/components/AdUnit";
+// import { AdUnit } from "@/components/AdUnit";
+
+export const dynamicParams = false;
 
 interface Props {
     params: { code: string };
@@ -125,7 +127,7 @@ export default function TypeDetailPage({ params }: Props) {
             </div>
 
             {/* Footer Ad */}
-            <AdUnit slot="1122334455" />
+            {/* <AdUnit slot="1122334455" /> */}
         </NotebookLayout>
     );
 }
