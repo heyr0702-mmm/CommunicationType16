@@ -56,7 +56,7 @@ export const CharacterProfile: React.FC<CharacterProfileProps> = ({ character, c
                 <h3 className="text-center font-bold border-b border-gray-200 py-3 font-handwriting text-lg bg-white rounded-t-lg">
                     特徴まとめ
                 </h3>
-                <p className="text-sm text-gray-700 leading-relaxed p-4">
+                <p className="text-sm text-gray-700 leading-relaxed p-3 sm:p-4">
                     {content.free.summary}
                 </p>
             </div>
@@ -65,16 +65,16 @@ export const CharacterProfile: React.FC<CharacterProfileProps> = ({ character, c
             <div className="mt-6 space-y-3">
                 {content.free.basicSpecs.map((spec, i) => (
                     <div key={i} className="bg-gray-50 rounded border-l-4 border-neon-blue">
-                        <h4 className="font-bold text-ink px-4 pt-3 pb-1">{spec.title}</h4>
-                        <p className="text-sm text-gray-700 leading-relaxed px-4 pb-3">{spec.description}</p>
+                        <h4 className="font-bold text-ink px-3 sm:px-4 pt-3 pb-1">{spec.title}</h4>
+                        <p className="text-sm text-gray-700 leading-relaxed px-3 sm:px-4 pb-3">{spec.description}</p>
                     </div>
                 ))}
             </div>
 
             {/* Reputation */}
             <div className="mt-6 bg-gray-50 rounded border-l-4 border-neon-pink">
-                <h4 className="font-bold text-ink px-4 pt-3 pb-1">{content.free.reputation.title}</h4>
-                <ul className="text-sm text-gray-700 leading-relaxed px-4 pb-3 space-y-1">
+                <h4 className="font-bold text-ink px-3 sm:px-4 pt-3 pb-1">{content.free.reputation.title}</h4>
+                <ul className="text-sm text-gray-700 leading-relaxed px-3 sm:px-4 pb-3 space-y-1">
                     {content.free.reputation.items.map((item, i) => (
                         <li key={i} className="flex items-start">
                             <span className="text-neon-pink mr-2">•</span>
@@ -86,8 +86,8 @@ export const CharacterProfile: React.FC<CharacterProfileProps> = ({ character, c
 
             {/* Aruaru */}
             <div className="mt-6 bg-gray-50 rounded border-l-4 border-neon-yellow">
-                <h4 className="font-bold text-ink px-4 pt-3 pb-1">{content.free.aruaru.title}</h4>
-                <ul className="text-sm text-gray-700 leading-relaxed px-4 pb-3 space-y-1">
+                <h4 className="font-bold text-ink px-3 sm:px-4 pt-3 pb-1">{content.free.aruaru.title}</h4>
+                <ul className="text-sm text-gray-700 leading-relaxed px-3 sm:px-4 pb-3 space-y-1">
                     {content.free.aruaru.items.map((item, i) => (
                         <li key={i} className="flex items-start">
                             <span className="text-neon-yellow mr-2">•</span>
@@ -99,8 +99,8 @@ export const CharacterProfile: React.FC<CharacterProfileProps> = ({ character, c
 
             {/* Comfort Zone */}
             <div className="mt-6 bg-gray-50 rounded border-l-4 border-gray-400">
-                <h4 className="font-bold text-ink px-4 pt-3 pb-1">{content.free.comfortZone.title}</h4>
-                <ul className="text-sm text-gray-700 leading-relaxed px-4 pb-3 space-y-1">
+                <h4 className="font-bold text-ink px-3 sm:px-4 pt-3 pb-1">{content.free.comfortZone.title}</h4>
+                <ul className="text-sm text-gray-700 leading-relaxed px-3 sm:px-4 pb-3 space-y-1">
                     {content.free.comfortZone.items.map((item, i) => (
                         <li key={i} className="flex items-start">
                             <span className="text-gray-400 mr-2">•</span>

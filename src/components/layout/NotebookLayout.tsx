@@ -26,7 +26,7 @@ export const NotebookLayout: React.FC<NotebookLayoutProps> = ({ children, classN
                 </div>
 
                 {/* Content Area */}
-                <div className="relative z-10 pl-6 sm:pl-8">
+                <div className="relative z-10 px-2 sm:pl-8 sm:pr-0">
                     {children}
                 </div>
 
