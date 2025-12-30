@@ -13,12 +13,12 @@ export default function Home() {
         <div className="space-y-6 z-10 relative w-full max-w-xl px-2">
           {/* Hero Title - No Box */}
           <div className="text-center relative overflow-hidden">
-            <span className="absolute right-0 top-0 bg-neon-pink text-white text-[10px] font-bold px-2 py-0.5 rounded-full shadow-md z-20">
+            <span className="absolute right-0 -top-1 sm:top-0 bg-neon-pink text-white text-[10px] font-bold px-2 py-0.5 rounded-full shadow-md z-20">
               New!
             </span>
 
-            <h1 className="text-[clamp(0.9rem,4.2vw,3rem)] font-bold tracking-tighter font-handwriting text-ink leading-tight whitespace-nowrap pt-2">
-              16コミュニケーションタイプ診断
+            <h1 className="text-[clamp(0.9rem,4.2vw,3rem)] font-bold tracking-tighter font-handwriting text-ink leading-tight whitespace-nowrap pt-4 sm:pt-2">
+              16コミュニケーション<br className="hidden sm:block" />タイプ診断
             </h1>
             <p className="text-xs sm:text-lg font-bold text-gray-700 bg-neon-yellow/50 px-4 py-1 mt-4 inline-block rounded">
               あなたの&ldquo;コミュ力の型&rdquo;には、名前がある。

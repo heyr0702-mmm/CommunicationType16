@@ -19,81 +19,28 @@ export default function ContactPage() {
                 <div className="space-y-6 text-sm sm:text-base text-gray-800 leading-relaxed">
                     <p>
                         当サイトに関するお問い合わせは、以下のフォームよりお送りください。
-                        <br />
-                        通常3営業日以内にご返信いたします。
                     </p>
 
-                    <form
-                        action="https://formspree.io/f/placeholder"
-                        method="POST"
-                        className="space-y-4"
-                    >
-                        <div>
-                            <label htmlFor="name" className="block text-sm font-bold text-gray-700 mb-1">
-                                お名前
-                            </label>
-                            <input
-                                type="text"
-                                id="name"
-                                name="name"
-                                required
-                                className="w-full px-4 py-2 border-2 border-gray-300 rounded-lg focus:border-neon-blue focus:outline-none"
-                                placeholder="山田 太郎"
-                            />
-                        </div>
+                    <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4 text-sm">
+                        <p className="text-yellow-800">
+                            ⚠️ 少人数で運営しているため、すべてのお問い合わせにご返信できない場合がございます。ご了承ください。
+                        </p>
+                    </div>
 
-                        <div>
-                            <label htmlFor="email" className="block text-sm font-bold text-gray-700 mb-1">
-                                メールアドレス
-                            </label>
-                            <input
-                                type="email"
-                                id="email"
-                                name="email"
-                                required
-                                className="w-full px-4 py-2 border-2 border-gray-300 rounded-lg focus:border-neon-blue focus:outline-none"
-                                placeholder="example@email.com"
-                            />
-                        </div>
-
-                        <div>
-                            <label htmlFor="subject" className="block text-sm font-bold text-gray-700 mb-1">
-                                件名
-                            </label>
-                            <input
-                                type="text"
-                                id="subject"
-                                name="subject"
-                                required
-                                className="w-full px-4 py-2 border-2 border-gray-300 rounded-lg focus:border-neon-blue focus:outline-none"
-                                placeholder="お問い合わせの件名"
-                            />
-                        </div>
-
-                        <div>
-                            <label htmlFor="message" className="block text-sm font-bold text-gray-700 mb-1">
-                                お問い合わせ内容
-                            </label>
-                            <textarea
-                                id="message"
-                                name="message"
-                                rows={5}
-                                required
-                                className="w-full px-4 py-2 border-2 border-gray-300 rounded-lg focus:border-neon-blue focus:outline-none resize-none"
-                                placeholder="お問い合わせ内容をご記入ください"
-                            />
-                        </div>
-
-                        <div className="pt-4">
-                            <Button type="submit" size="lg" className="w-full bg-black text-white hover:bg-gray-800 border-2 border-black">
-                                送信する
-                            </Button>
-                        </div>
-                    </form>
-
-                    <p className="text-xs text-gray-500 mt-4">
-                        ※ お問い合わせ内容によっては、返信にお時間をいただく場合がございます。
-                    </p>
+                    {/* Google Forms Embed - Replace YOUR_FORM_ID with actual form ID */}
+                    <div className="w-full overflow-hidden rounded-lg border border-gray-200">
+                        <iframe
+                            src="https://docs.google.com/forms/d/e/YOUR_FORM_ID/viewform?embedded=true"
+                            width="100%"
+                            height="600"
+                            frameBorder="0"
+                            marginHeight={0}
+                            marginWidth={0}
+                            className="w-full"
+                        >
+                            読み込んでいます…
+                        </iframe>
+                    </div>
                 </div>
 
                 <div className="mt-8 text-center">
@@ -105,3 +52,4 @@ export default function ContactPage() {
         </NotebookLayout>
     );
 }
+
