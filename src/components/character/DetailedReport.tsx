@@ -41,9 +41,11 @@ export const DetailedReport: React.FC<DetailedReportProps> = ({ content, onClose
                     <div className="bg-blue-50 p-4 rounded border border-blue-100">
                         <span className="text-xs font-bold bg-blue-200 text-blue-800 px-2 py-1 rounded mb-2 inline-block">BEST</span>
                         <div className="mb-2">
-                            <p className="text-lg font-bold text-blue-900 leading-none">{content.unlocked.compatibility.best.code}</p>
-                            <p className="text-sm font-bold text-blue-700 mt-1">
+                            <p className="text-lg font-bold text-blue-900 leading-tight">
                                 {COMMUNICATION_TYPE_META.find(c => c.code === content.unlocked.compatibility.best.code)?.label}
+                            </p>
+                            <p className="text-xs font-bold text-blue-600 mt-1">
+                                {content.unlocked.compatibility.best.code}
                             </p>
                         </div>
                         <p className="text-sm text-blue-800 leading-relaxed">{content.unlocked.compatibility.best.reason}</p>
@@ -51,9 +53,11 @@ export const DetailedReport: React.FC<DetailedReportProps> = ({ content, onClose
                     <div className="bg-gray-50 p-4 rounded border border-gray-200">
                         <span className="text-xs font-bold bg-gray-200 text-gray-800 px-2 py-1 rounded mb-2 inline-block">WORST</span>
                         <div className="mb-2">
-                            <p className="text-lg font-bold text-gray-900 leading-none">{content.unlocked.compatibility.worst.code}</p>
-                            <p className="text-sm font-bold text-gray-700 mt-1">
+                            <p className="text-lg font-bold text-gray-900 leading-tight">
                                 {COMMUNICATION_TYPE_META.find(c => c.code === content.unlocked.compatibility.worst.code)?.label}
+                            </p>
+                            <p className="text-xs font-bold text-gray-600 mt-1">
+                                {content.unlocked.compatibility.worst.code}
                             </p>
                         </div>
                         <p className="text-sm text-gray-800 leading-relaxed">{content.unlocked.compatibility.worst.reason}</p>
