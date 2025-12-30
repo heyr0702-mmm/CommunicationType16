@@ -32,19 +32,19 @@ export const NotebookLayout: React.FC<NotebookLayoutProps> = ({ children, classN
 
                 {/* Footer */}
                 <div className="relative z-10 mt-12 border-t border-gray-300 pt-4 text-center">
-                    <div className="flex justify-center space-x-4 text-xs text-gray-500 font-medium">
-                        <Link href="/" className="hover:text-neon-blue transition-colors">
+                    <div className="flex flex-wrap justify-center gap-x-4 gap-y-2 text-xs text-gray-500 font-medium">
+                        <Link href="/" className="hover:text-neon-blue transition-colors whitespace-nowrap">
                             TOP
                         </Link>
-                        <Link href="/types" className="hover:text-neon-blue transition-colors">
+                        <Link href="/types" className="hover:text-neon-blue transition-colors whitespace-nowrap">
                             タイプ一覧
                         </Link>
-                        <span>|</span>
-                        <Link href="/privacy-policy" className="hover:text-neon-blue transition-colors">
+                        <span className="hidden sm:inline">|</span>
+                        <Link href="/privacy-policy" className="hover:text-neon-blue transition-colors whitespace-nowrap">
                             プライバシーポリシー
                         </Link>
-                        <span>|</span>
-                        <Link href="/terms" className="hover:text-neon-blue transition-colors">
+                        <span className="hidden sm:inline">|</span>
+                        <Link href="/terms" className="hover:text-neon-blue transition-colors whitespace-nowrap">
                             利用規約
                         </Link>
                     </div>

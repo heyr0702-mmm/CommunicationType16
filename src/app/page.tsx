@@ -18,11 +18,11 @@ export default function Home() {
               New!
             </div>
 
-            <h1 className="text-2xl sm:text-5xl font-bold tracking-tighter font-handwriting text-ink mb-6 leading-tight">
-              16コミュニケーション<br className="block sm:hidden" />タイプ診断
+            <h1 className="text-2xl sm:text-5xl font-bold tracking-tighter font-handwriting text-ink mb-6 leading-tight" style={{ textWrap: 'balance' }}>
+              16コミュニケーションタイプ診断
             </h1>
             <p className="text-xs sm:text-lg font-bold text-gray-700 bg-neon-yellow/30 inline-block px-4 py-1 leading-relaxed">
-              あなたの“コミュ力の型”には、<br className="block sm:hidden" />名前がある。
+              あなたの“コミュ力の型”には、名前がある。
             </p>
           </div>
 
@@ -63,7 +63,7 @@ export default function Home() {
             </h2>
           </div>
 
-          <p className="leading-8 text-sm sm:text-base">
+          <p className="leading-8 text-sm sm:text-base text-justify">
             人には、生まれ持った“性格”とは別に、会話のときに自然と現れる“スタイル（型）”があります。<br /><br />
             そのスタイルは、ひとりのとき、大人数のとき、仲の良い相手のとき——相手や場面によって、少しずつ形を変えます。良い悪いではなく、ただ“違い”として存在するもの。<br /><br />
             この診断は、あなたが普段無意識に使っている話し方・返し方・関わり方のスタイルを可視化し、どんな相手と相性が良く、どんな場面で変化しやすいかを知るためのツールです。
@@ -104,7 +104,7 @@ export default function Home() {
                 Power (主導権)
               </h3>
               <p className="text-xs font-bold text-gray-400 mb-2 uppercase tracking-wider">Lead vs Follow</p>
-              <p className="text-sm text-gray-700 leading-relaxed">
+              <p className="text-sm text-gray-700 leading-relaxed text-justify">
                 会話のハンドルを握る力。「自分が決めるか、相手に任せるか」のバランスを見ます。
               </p>
             </div>
@@ -117,7 +117,7 @@ export default function Home() {
                 Warmth (温度感)
               </h3>
               <p className="text-xs font-bold text-gray-400 mb-2 uppercase tracking-wider">Logic vs Emotion</p>
-              <p className="text-sm text-gray-700 leading-relaxed">
+              <p className="text-sm text-gray-700 leading-relaxed text-justify">
                 共感や感情の豊かさ。「論理立てて話すか、感情を優先して話すか」の傾向です。
               </p>
             </div>
@@ -130,7 +130,7 @@ export default function Home() {
                 Speed (テンポ)
               </h3>
               <p className="text-xs font-bold text-gray-400 mb-2 uppercase tracking-wider">Fast vs Slow</p>
-              <p className="text-sm text-gray-700 leading-relaxed">
+              <p className="text-sm text-gray-700 leading-relaxed text-justify">
                 会話のスピード感。「即レスで返すか、じっくり考えて返すか」のリズムを測定します。
               </p>
             </div>
@@ -143,7 +143,7 @@ export default function Home() {
                 Volume (主張)
               </h3>
               <p className="text-xs font-bold text-gray-400 mb-2 uppercase tracking-wider">Assertive vs Receptive</p>
-              <p className="text-sm text-gray-700 leading-relaxed">
+              <p className="text-sm text-gray-700 leading-relaxed text-justify">
                 自己主張の強さ。「はっきり意見を言うか、相手の空気を読んで察するか」のスタンスです。
               </p>
             </div>
