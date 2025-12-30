@@ -59,7 +59,7 @@ export default function Home() {
           <div className="text-center">
             <span className="bg-neon-yellow px-2 py-1 text-sm font-bold transform -rotate-2 inline-block mb-4">About This Tool</span>
             <h2 className="text-2xl sm:text-3xl font-bold font-handwriting mb-6">
-              無意識の"会話スタイル"を<br className="block sm:hidden" />可視化する
+              無意識の&ldquo;会話スタイル&rdquo;を<br className="block sm:hidden" />可視化する
             </h2>
           </div>
 
