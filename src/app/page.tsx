@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { NotebookLayout } from "@/components/layout/NotebookLayout";
 import { Button } from "@/components/ui/Button";
+import { AdUnit } from "@/components/AdUnit";
 
 export default function Home() {
   return (
@@ -225,6 +226,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* AdUnit */}
+      <AdUnit slot="1234567890" />
 
     </NotebookLayout >
   );

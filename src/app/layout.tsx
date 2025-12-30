@@ -20,7 +20,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="ja">
       <body className={inter.className}>
         <GoogleAdsense pId="8802783650388237" />
         <GoogleAnalytics gaId="G-JKEGM9WS1B" />

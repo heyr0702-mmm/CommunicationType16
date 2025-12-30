@@ -3,6 +3,7 @@ import { NotebookLayout } from "@/components/layout/NotebookLayout";
 import { Button } from "@/components/ui/Button";
 import { COMMUNICATION_TYPE_META } from "@/lib/constants";
 import { TypeCard } from "@/components/ui/TypeCard";
+import { AdUnit } from "@/components/AdUnit";
 
 export default function TypeList() {
     return (
@@ -32,6 +33,9 @@ export default function TypeList() {
                     </Link>
                 ))}
             </div>
+
+            {/* AdUnit */}
+            <AdUnit slot="9876543210" />
 
             <div className="pt-8 text-center border-t border-dashed border-gray-300">
                 <Link href="/diagnosis">
