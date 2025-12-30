@@ -19,7 +19,7 @@ export default function Home() {
             </div>
 
             <h1 className="text-xl sm:text-5xl font-bold tracking-tighter font-handwriting text-ink mb-6 leading-tight whitespace-nowrap">
-              16コミュニケーションタイプ診断
+              コミュニケーションタイプ診断
             </h1>
             <p className="text-xs sm:text-lg font-bold text-gray-700 bg-neon-yellow/30 inline-block px-4 py-1 leading-relaxed whitespace-nowrap">
               あなたの“コミュ力の型”には、名前がある。
