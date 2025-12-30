@@ -30,7 +30,7 @@ export default function ContactPage() {
                     {/* Google Forms Embed - Replace YOUR_FORM_ID with actual form ID */}
                     <div className="w-full overflow-hidden rounded-lg border border-gray-200">
                         <iframe
-                            src="https://docs.google.com/forms/d/e/YOUR_FORM_ID/viewform?embedded=true"
+                            src="https://docs.google.com/forms/d/e/1FAIpQLSdvbVGUHky1C9No0LfwcINnAZE8X3HXIr48KF9Op2D_ZgsC0g/viewform?embedded=true"
                             width="100%"
                             height="600"
                             frameBorder="0"
