@@ -1,3 +1,5 @@
+"use client";
+
 import React from 'react';
 import { CommunicationTypeMeta } from "@/lib/types";
 import { ResultContent } from "@/types/content";
