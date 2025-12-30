@@ -22,7 +22,7 @@ export default function Home() {
               16タイプ<br />コミュニケーション診断
             </h1>
             <p className="text-xs sm:text-lg font-bold text-gray-700 bg-neon-yellow/30 px-4 py-1 leading-relaxed whitespace-nowrap mx-auto inline-block">
-              あなたの"コミュ力の型"には、名前がある。
+              あなたの&ldquo;コミュ力の型&rdquo;には、名前がある。
             </p>
           </div>
 
