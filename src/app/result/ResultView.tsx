@@ -5,7 +5,7 @@ import { useSearchParams, useRouter } from "next/navigation";
 import Link from "next/link";
 import { NotebookLayout } from "@/components/layout/NotebookLayout";
 import { Button } from "@/components/ui/Button";
-import { ProgressBar } from "@/components/ui/ProgressBar";
+import { BipolarBar } from "@/components/ui/BipolarBar";
 import { calculateScores, determineCharacter, Answers } from "@/lib/logic";
 import { CommunicationTypeMeta, AxisResult } from "@/lib/types";
 import { COMMUNICATION_TYPE_META } from "@/lib/constants";
@@ -85,7 +85,7 @@ export function ResultView() {
                                     {result.axis === 'Speed' && 'スピード (テンポ)'}
                                     {result.axis === 'Volume' && 'ボリューム (主張)'}
                                 </p>
-                                <ProgressBar
+                                <BipolarBar
                                     value={result.percentage}
                                     labelLeft={result.labelNegative}
                                     labelRight={result.labelPositive}
