@@ -34,8 +34,16 @@ body {
 /* Improve typography for Japanese text */
 p,
 li {
-  text-wrap: pretty;
   overflow-wrap: anywhere;
+}
+
+/* Desktop only: balanced line wrapping */
+@media (min-width: 640px) {
+
+  p,
+  li {
+    text-wrap: pretty;
+  }
 }
 
 /* Custom Utilities for Profile Book Look */
