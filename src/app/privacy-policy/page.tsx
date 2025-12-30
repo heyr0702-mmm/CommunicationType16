@@ -60,7 +60,7 @@ export default function PrivacyPolicy() {
                         </h2>
                         <p>
                             <strong>運営者:</strong> CommunicationType16運営チーム<br />
-                            <strong>連絡先:</strong> support@communicationType16.vercel.app
+                            <strong>連絡先:</strong> communicationtype16@example.com
                         </p>
                     </section>
                 </div>

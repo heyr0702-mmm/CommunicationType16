@@ -1,5 +1,6 @@
-import { Metadata } from 'next';
-import { notFound } from 'next/navigation';
+"use client";
+
+import { useState } from 'react';
 import Link from 'next/link';
 import { COMMUNICATION_TYPE_META } from "@/lib/constants";
 import { RESULT_CONTENTS } from "@/data/contents";
@@ -8,60 +9,21 @@ import { DetailedReport } from "@/components/character/DetailedReport";
 import { ShareButtons } from "@/components/character/ShareButtons";
 import { NotebookLayout } from "@/components/layout/NotebookLayout";
 import { Button } from "@/components/ui/Button";
-// import { AdUnit } from "@/components/AdUnit";
-
-export const dynamicParams = false;
+import { ChevronDown, ChevronUp } from "lucide-react";
 
 interface Props {
     params: { code: string };
 }
 
-// 🟢 Generate Static Paths for all 16 types (SSG)
-export async function generateStaticParams() {
-    return COMMUNICATION_TYPE_META.map((type) => ({
-        code: type.code,
-    }));
-}
-
-// 🟢 Generate Metadata & JSON-LD
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-    const char = COMMUNICATION_TYPE_META.find((c) => c.code === params.code.toUpperCase());
-    if (!char) return {};
-
-    const content = RESULT_CONTENTS[char.code] || RESULT_CONTENTS["DEIX"];
-    const title = `${char.code}: ${char.label} | 16コミュニケーションタイプ詳細図鑑`;
-    const description = `${char.label} (${char.code}) の性格特徴、会話スタイル、相性診断の結果を解説。キャッチコピー: ${content.free.catchCopy}`;
-    const url = `https://communicationtype16.vercel.app/types/${char.code}`;
-
-    return {
-        title,
-        description,
-        openGraph: {
-            title,
-            description,
-            url,
-            images: [`https://vibetype16.vercel.app/images/characters/${char.code}.png`],
-            type: 'article',
-        },
-        twitter: {
-            card: 'summary_large_image',
-            title,
-            description,
-            images: [`https://vibetype16.vercel.app/images/characters/${char.code}.png`],
-        },
-        alternates: {
-            canonical: url,
-        },
-    };
-}
-
 export default function TypeDetailPage({ params }: Props) {
+    const [isReportOpen, setIsReportOpen] = useState(false);
+
     const code = params.code.toUpperCase();
     const char = COMMUNICATION_TYPE_META.find((c) => c.code === code);
     const content = RESULT_CONTENTS[code];
 
     if (!char || !content) {
-        notFound();
+        return null;
     }
 
     // JSON-LD Structured Data
@@ -95,14 +57,29 @@ export default function TypeDetailPage({ params }: Props) {
                 {/* No graph child for static pages */}
             </CharacterProfile>
 
-            {/* Detailed Report (Always Expanded) */}
+            {/* Detailed Report (Expandable) */}
             <div className="max-w-2xl mx-auto w-full">
-                <div className="bg-gray-100 p-4 rounded-t-lg border-2 border-b-0 border-dashed border-gray-400 text-center">
-                    <h2 className="text-lg font-bold text-gray-700">👇 詳細レポート (Unlocked)</h2>
-                </div>
-                <div className="pt-0 p-4 border-2 border-t-0 border-dashed border-gray-400 rounded-b-lg bg-gray-50/50">
-                    <DetailedReport content={content} />
-                </div>
+                <button
+                    onClick={() => setIsReportOpen(!isReportOpen)}
+                    className="w-full bg-gray-100 p-4 rounded-lg border-2 border-dashed border-gray-400 text-center hover:bg-gray-200 transition-colors"
+                >
+                    <div className="flex items-center justify-center gap-2">
+                        {isReportOpen ? (
+                            <ChevronUp className="w-5 h-5 text-gray-600" />
+                        ) : (
+                            <ChevronDown className="w-5 h-5 text-gray-600" />
+                        )}
+                        <h2 className="text-lg font-bold text-gray-700">
+                            {isReportOpen ? '詳細レポートを閉じる' : '👇 タップして詳細レポートを見る'}
+                        </h2>
+                    </div>
+                </button>
+
+                {isReportOpen && (
+                    <div className="pt-0 p-4 border-2 border-t-0 border-dashed border-gray-400 rounded-b-lg bg-gray-50/50 animate-in slide-in-from-top-2 duration-300">
+                        <DetailedReport content={content} />
+                    </div>
+                )}
             </div>
 
             {/* Share Buttons */}
@@ -125,9 +102,6 @@ export default function TypeDetailPage({ params }: Props) {
                     </Link>
                 </div>
             </div>
-
-            {/* Footer Ad */}
-            {/* <AdUnit slot="1122334455" /> */}
         </NotebookLayout>
     );
 }
