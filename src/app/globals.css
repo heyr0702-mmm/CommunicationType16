@@ -27,16 +27,15 @@ body {
   min-height: 100vh;
   /* Improve text wrapping on mobile */
   overflow-wrap: anywhere;
-  word-break: keep-all;
-  word-wrap: break-word;
+  word-break: break-word;
+  line-break: strict;
 }
 
 /* Improve typography for Japanese text */
 p,
 li {
   text-wrap: pretty;
-  word-break: break-word;
-  /* Allows breaking words if necessary to prevent overflow */
+  overflow-wrap: anywhere;
 }
 
 /* Custom Utilities for Profile Book Look */
