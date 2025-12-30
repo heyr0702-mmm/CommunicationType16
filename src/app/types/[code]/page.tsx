@@ -109,19 +109,19 @@ export default function TypeDetailPage({ params }: Props) {
             <ShareButtons character={char} content={content} />
 
             {/* Navigation / Call to Action */}
-            <div className="max-w-2xl mx-auto w-full text-center space-y-6 mt-12 bg-white/80 p-8 rounded-lg notebook-border">
-                <h3 className="text-xl font-bold text-ink">あなたのタイプはどれ？</h3>
-                <p className="text-sm text-gray-600">
-                    16のタイプから、あなたのコミュニケーションスタイルを診断してみよう！
+            <div className="max-w-2xl mx-auto w-full text-center space-y-6 mt-12 bg-white/90 p-8 rounded-lg notebook-border">
+                <h3 className="text-xl font-bold font-handwriting text-ink">あなたのタイプは？</h3>
+                <p className="text-sm text-gray-600 leading-relaxed">
+                    16のタイプから、あなたのコミュニケーションスタイルを診断しよう！
                 </p>
-                <Link href="/">
-                    <Button size="lg" className="bg-neon-pink hover:bg-neon-pink/90 text-white font-bold px-8 py-6 rounded-full shadow-lg transform transition hover:scale-105">
-                        無料で診断する (スタート)
+                <Link href="/diagnosis">
+                    <Button size="lg" className="w-full text-lg py-6 animate-pulse shadow-xl border-2 border-black bg-black text-white hover:bg-gray-800">
+                        診断スタート
                     </Button>
                 </Link>
-                <div className="pt-4">
+                <div className="pt-2">
                     <Link href="/types">
-                        <Button variant="ghost">← タイプ一覧に戻る</Button>
+                        <Button variant="ghost" className="text-gray-500">← タイプ一覧に戻る</Button>
                     </Link>
                 </div>
             </div>
