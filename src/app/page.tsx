@@ -9,23 +9,22 @@ export default function Home() {
       {/* Added min-h-[80vh] to keep it filling most of the screen initially, but allowing scroll */}
       <section className="flex flex-col items-center justify-center text-center space-y-8 sm:space-y-12 min-h-[80vh] py-10">
 
-        <div className="space-y-6 z-10 relative w-full max-w-lg">
-          {/* Title Container */}
-          <div className="bg-white p-8 rounded-lg shadow-xl border border-gray-200 relative text-center">
-            <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 w-24 h-6 bg-gray-200/50 z-10 backdrop-blur-sm border-l border-r border-white/50" />
-
-            <div className="absolute -right-4 -top-4 bg-neon-pink text-white text-xs font-bold px-3 py-1 rounded-full shadow-md z-20">
+        <div className="space-y-6 z-10 relative w-full max-w-xl px-4">
+          {/* Hero Title - No Box */}
+          <div className="text-center relative">
+            <div className="absolute -right-2 top-0 bg-neon-pink text-white text-xs font-bold px-3 py-1 rounded-full shadow-md z-20">
               New!
             </div>
 
-            <h1 className="text-2xl sm:text-5xl font-bold tracking-tighter font-handwriting text-ink mb-6 leading-tight text-center">
-              16タイプ<br />コミュニケーション診断
+            <h1 className="text-[5.5vw] sm:text-5xl font-bold tracking-tighter font-handwriting text-ink leading-tight whitespace-nowrap">
+              16コミュニケーションタイプ診断
             </h1>
-            <p className="text-xs sm:text-lg font-bold text-gray-700 bg-neon-yellow/30 px-4 py-1 leading-relaxed whitespace-nowrap mx-auto inline-block">
+            <p className="text-xs sm:text-lg font-bold text-gray-700 bg-neon-yellow/50 px-4 py-1 mt-4 inline-block rounded">
               あなたの&ldquo;コミュ力の型&rdquo;には、名前がある。
             </p>
           </div>
 
+          {/* How it works */}
           <div className="mx-auto p-6 bg-white/90 notebook-border text-center rounded-lg">
             <h2 className="font-bold text-lg mb-2 text-gray-400 font-handwriting">How it works</h2>
             <p className="text-sm sm:text-base leading-relaxed font-medium text-gray-800">
