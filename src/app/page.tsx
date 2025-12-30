@@ -18,11 +18,11 @@ export default function Home() {
               New!
             </div>
 
-            <h1 className="text-xl sm:text-5xl font-bold tracking-tighter font-handwriting text-ink mb-6 leading-tight whitespace-nowrap">
-              コミュニケーションタイプ診断
+            <h1 className="text-2xl sm:text-5xl font-bold tracking-tighter font-handwriting text-ink mb-6 leading-tight text-center">
+              16タイプ<br />コミュニケーション診断
             </h1>
-            <p className="text-xs sm:text-lg font-bold text-gray-700 bg-neon-yellow/30 inline-block px-4 py-1 leading-relaxed whitespace-nowrap">
-              あなたの“コミュ力の型”には、名前がある。
+            <p className="text-xs sm:text-lg font-bold text-gray-700 bg-neon-yellow/30 px-4 py-1 leading-relaxed whitespace-nowrap mx-auto inline-block">
+              あなたの"コミュ力の型"には、名前がある。
             </p>
           </div>
 
