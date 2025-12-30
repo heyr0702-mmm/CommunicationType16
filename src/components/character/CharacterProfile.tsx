@@ -57,7 +57,7 @@ export const CharacterProfile: React.FC<CharacterProfileProps> = ({ character, c
                     特徴まとめ
                 </h3>
                 <div className="bg-white p-4 rounded border border-gray-200">
-                    <p className="text-sm text-gray-600 font-medium leading-relaxed text-justify">
+                    <p className="text-sm text-gray-600 font-medium leading-relaxed">
                         {content.free.summary}
                     </p>
                 </div>
@@ -68,7 +68,7 @@ export const CharacterProfile: React.FC<CharacterProfileProps> = ({ character, c
                 {content.free.basicSpecs.map((spec, i) => (
                     <div key={i} className="bg-white/80 p-4 rounded border-l-4 border-neon-blue">
                         <h4 className="font-bold text-ink mb-2">{spec.title}</h4>
-                        <p className="text-sm text-gray-700 leading-relaxed text-justify">{spec.description}</p>
+                        <p className="text-sm text-gray-700 leading-relaxed">{spec.description}</p>
                     </div>
                 ))}
             </div>
@@ -76,7 +76,7 @@ export const CharacterProfile: React.FC<CharacterProfileProps> = ({ character, c
             {/* Reputation */}
             <div className="mt-6 bg-white/80 p-4 rounded border-l-4 border-neon-pink">
                 <h4 className="font-bold text-ink mb-2">{content.free.reputation.title}</h4>
-                <ul className="list-disc list-inside text-sm text-gray-700 space-y-1 text-justify">
+                <ul className="list-disc list-inside text-sm text-gray-700 space-y-1">
                     {content.free.reputation.items.map((item, i) => (
                         <li key={i}>{item}</li>
                     ))}
@@ -86,7 +86,7 @@ export const CharacterProfile: React.FC<CharacterProfileProps> = ({ character, c
             {/* Aruaru */}
             <div className="mt-6 bg-white/80 p-4 rounded border-l-4 border-neon-yellow">
                 <h4 className="font-bold text-ink mb-2">{content.free.aruaru.title}</h4>
-                <ul className="list-disc list-inside text-sm text-gray-700 space-y-1 text-justify">
+                <ul className="list-disc list-inside text-sm text-gray-700 space-y-1">
                     {content.free.aruaru.items.map((item, i) => (
                         <li key={i}>{item}</li>
                     ))}
@@ -96,7 +96,7 @@ export const CharacterProfile: React.FC<CharacterProfileProps> = ({ character, c
             {/* Comfort Zone */}
             <div className="mt-6 bg-white/80 p-4 rounded border-l-4 border-gray-400">
                 <h4 className="font-bold text-ink mb-2">{content.free.comfortZone.title}</h4>
-                <ul className="list-disc list-inside text-sm text-gray-700 space-y-1 text-justify">
+                <ul className="list-disc list-inside text-sm text-gray-700 space-y-1">
                     {content.free.comfortZone.items.map((item, i) => (
                         <li key={i}>{item}</li>
                     ))}
