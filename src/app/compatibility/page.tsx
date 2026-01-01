@@ -70,10 +70,7 @@ function CompatibilityContent() {
                         </select>
                         {type1 && (
                             <div className="text-center animate-in fade-in">
-                                <span className="text-2xl">
-                                    {getTypeEmoji(type1)}
-                                </span>
-                                <p className="text-sm font-bold mt-1">{getTypeLabel(type1)}</p>
+                                <p className="text-sm font-bold text-neon-pink">{getTypeLabel(type1)}</p>
                             </div>
                         )}
                     </div>
@@ -95,10 +92,7 @@ function CompatibilityContent() {
                         </select>
                         {type2 && (
                             <div className="text-center animate-in fade-in">
-                                <span className="text-2xl">
-                                    {getTypeEmoji(type2)}
-                                </span>
-                                <p className="text-sm font-bold mt-1">{getTypeLabel(type2)}</p>
+                                <p className="text-sm font-bold text-neon-blue">{getTypeLabel(type2)}</p>
                             </div>
                         )}
                     </div>

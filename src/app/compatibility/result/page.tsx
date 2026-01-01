@@ -99,15 +99,15 @@ function CompatibilityResultContent() {
                 <h2 className="text-lg font-bold text-center border-b-2 border-gray-300 pb-2 mb-4">
                     💬 こんな会話になりがち
                 </h2>
-                <div className="bg-gray-50 p-4 rounded-lg space-y-3">
+                <div className="bg-gray-50 p-4 rounded-lg space-y-4">
                     {conversationExample.map((line, idx) => (
-                        <div key={idx} className="flex flex-col">
+                        <div key={idx} className={`flex flex-col ${line.speaker === 2 ? 'items-end' : 'items-start'}`}>
                             <span className={`text-xs font-bold mb-1 ${line.speaker === 1 ? 'text-neon-pink' : 'text-neon-blue'}`}>
                                 {line.speaker === 1 ? type1.label : type2.label}
                             </span>
-                            <div className={`px-3 py-2 rounded-lg text-sm ${line.speaker === 1
-                                ? 'bg-white border border-gray-200'
-                                : 'bg-neon-blue/10 border border-neon-blue/20'
+                            <div className={`px-4 py-2 rounded-2xl text-sm max-w-[80%] ${line.speaker === 1
+                                ? 'bg-white border border-gray-200 rounded-tl-sm'
+                                : 'bg-neon-blue/20 border border-neon-blue/30 rounded-tr-sm'
                                 }`}>
                                 {line.text}
                             </div>
