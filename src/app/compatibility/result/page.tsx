@@ -8,6 +8,8 @@ import { Button } from "@/components/ui/Button";
 import { calculateCompatibility, CompatibilityResult } from "@/lib/compatibility";
 import { AdUnit } from "@/components/AdUnit";
 
+const SITE_URL = "https://vibetype16.vercel.app";
+
 function CompatibilityResultContent() {
     const searchParams = useSearchParams();
     const router = useRouter();
@@ -99,20 +101,19 @@ function CompatibilityResultContent() {
                 </h2>
                 <div className="bg-gray-50 p-4 rounded-lg space-y-3">
                     {conversationExample.map((line, idx) => (
-                        <div key={idx} className={`flex items-start gap-2 ${line.speaker === 2 ? 'flex-row-reverse' : ''}`}>
-                            <span className="text-xl">{line.emoji}</span>
-                            <div className={`px-3 py-2 rounded-lg text-sm max-w-[80%] ${line.speaker === 1
-                                    ? 'bg-white border border-gray-200'
-                                    : 'bg-neon-blue/10 border border-neon-blue/20'
+                        <div key={idx} className="flex flex-col">
+                            <span className={`text-xs font-bold mb-1 ${line.speaker === 1 ? 'text-neon-pink' : 'text-neon-blue'}`}>
+                                {line.speaker === 1 ? type1.label : type2.label}
+                            </span>
+                            <div className={`px-3 py-2 rounded-lg text-sm ${line.speaker === 1
+                                ? 'bg-white border border-gray-200'
+                                : 'bg-neon-blue/10 border border-neon-blue/20'
                                 }`}>
                                 {line.text}
                             </div>
                         </div>
                     ))}
                 </div>
-                <p className="text-xs text-gray-500 text-center mt-2">
-                    {type1.label}がリード、{type2.label}がフォロー。息が合う✨
-                </p>
             </div>
 
             {/* Good Points */}
@@ -165,23 +166,49 @@ function CompatibilityResultContent() {
             {/* Share & Actions */}
             <div className="max-w-2xl mx-auto w-full space-y-4">
                 <div className="bg-gray-100 p-6 rounded-lg text-center space-y-4">
-                    <p className="font-bold">💕 この結果をシェア</p>
+                    <p className="font-bold">💕 友達にも診断してもらおう</p>
                     <p className="text-sm text-gray-600">
                         友達・恋人・家族にこの診断をシェアして、<br />
                         お互いのタイプで相性チェック！
                     </p>
                     <div className="flex flex-wrap justify-center gap-3">
-                        <Link href="/">
-                            <Button variant="secondary" size="sm">
-                                📱 診断リンクをシェア
-                            </Button>
-                        </Link>
-                        <Link href="/compatibility">
-                            <Button variant="secondary" size="sm">
-                                💕 もう一度診断
-                            </Button>
-                        </Link>
+                        <button
+                            onClick={() => {
+                                const shareUrl = SITE_URL;
+                                const shareText = "16コミュニケーションタイプ診断やってみて！";
+                                const lineUrl = `https://line.me/R/msg/text/?${encodeURIComponent(shareText + "\n" + shareUrl)}`;
+                                window.open(lineUrl, '_blank');
+                            }}
+                            className="bg-[#06C755] text-white px-4 py-2 rounded-lg text-sm font-bold hover:opacity-90 transition-opacity"
+                        >
+                            LINEで送る
+                        </button>
+                        <button
+                            onClick={() => {
+                                const shareUrl = SITE_URL;
+                                const shareText = "16コミュニケーションタイプ診断やってみて！";
+                                const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(shareUrl)}`;
+                                window.open(twitterUrl, '_blank');
+                            }}
+                            className="bg-black text-white px-4 py-2 rounded-lg text-sm font-bold hover:opacity-90 transition-opacity"
+                        >
+                            Xでシェア
+                        </button>
+                        <button
+                            onClick={() => {
+                                navigator.clipboard.writeText(SITE_URL);
+                                alert('リンクをコピーしました！');
+                            }}
+                            className="bg-gray-600 text-white px-4 py-2 rounded-lg text-sm font-bold hover:opacity-90 transition-opacity"
+                        >
+                            リンクをコピー
+                        </button>
                     </div>
+                    <Link href="/compatibility">
+                        <Button variant="secondary" size="sm" className="mt-2">
+                            💕 もう一度診断
+                        </Button>
+                    </Link>
                 </div>
             </div>
 
