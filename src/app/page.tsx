@@ -215,6 +215,19 @@ export default function Home() {
                 </p>
               </div>
             </div>
+
+            <div className="flex items-start space-x-4 bg-gradient-to-r from-pink-50 to-blue-50 p-5 rounded-lg border-2 border-neon-pink shadow-sm hover:shadow-md transition-shadow">
+              <div className="text-2xl">💕</div>
+              <div>
+                <h3 className="font-bold text-lg mb-1">相性診断に</h3>
+                <p className="text-sm text-gray-600">
+                  友達・恋人・家族と診断して、2人の相性をチェック！
+                </p>
+                <Link href="/compatibility" className="text-neon-pink text-sm font-bold inline-block mt-2 hover:underline">
+                  → 相性診断する
+                </Link>
+              </div>
+            </div>
           </div>
 
           <div className="pt-12 text-center">

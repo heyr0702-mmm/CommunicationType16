@@ -134,6 +134,22 @@ export function ResultView() {
             {/* Share Buttons (Moved) */}
             <ShareButtons character={character} content={content} />
 
+            {/* Compatibility CTA */}
+            <div className="max-w-2xl mx-auto w-full bg-gradient-to-r from-pink-50 to-blue-50 p-6 rounded-lg border-2 border-neon-pink text-center space-y-4">
+                <p className="font-bold text-lg">💕 2人の相性を診断しよう</p>
+                <p className="text-sm text-gray-600">
+                    友達・恋人・家族にこの診断をシェアして、<br />
+                    お互いのタイプで相性チェック！
+                </p>
+                <div className="flex flex-wrap justify-center gap-3">
+                    <Link href={`/compatibility?my=${character.code}`}>
+                        <Button variant="secondary" className="border-2 border-neon-pink hover:bg-neon-pink/10">
+                            💕 相性診断ページへ
+                        </Button>
+                    </Link>
+                </div>
+            </div>
+
             {/* AdUnit before footer */}
             <AdUnit slot="1122334455" />
 
