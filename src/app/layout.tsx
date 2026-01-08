@@ -31,7 +31,12 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <body className={inter.className}>
-        <GoogleAdsense pId="8802783650388237" />
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8802783650388237"
+          crossOrigin="anonymous"
+        ></script>
+        {/* <GoogleAdsense pId="8802783650388237" /> */}
         <GoogleAnalytics gaId="G-JKEGM9WS1B" />
         {children}
       </body>
