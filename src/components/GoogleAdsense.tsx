@@ -14,10 +14,10 @@ export const GoogleAdsense = ({ pId }: Props) => {
         return null;
     }
 
-    // Only load AdSense on the result page to avoid policy violations on low-content pages
-    if (!pathname?.startsWith("/result")) {
-        return null;
-    }
+    // Load AdSense on all pages for site review
+    // if (!pathname?.startsWith("/result")) {
+    //     return null;
+    // }
 
     return (
         <Script
