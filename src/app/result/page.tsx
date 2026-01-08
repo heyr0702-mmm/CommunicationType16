@@ -1,68 +1,31 @@
-
 import { Suspense } from "react";
 import { Metadata } from "next";
-import { calculateScores, determineCharacter, Answers } from "@/lib/logic";
-import { COMMUNICATION_TYPE_META } from "@/lib/constants";
 import { ResultView } from "./ResultView";
 
-interface Props {
-    searchParams: { [key: string]: string | string[] | undefined };
-}
-
-export async function generateMetadata({ searchParams }: Props): Promise<Metadata> {
-    const data = searchParams.data;
-    const code = searchParams.code;
-    let characterImage = "https://vibetype16.vercel.app/images/ogp-default.png"; // Fallback
-    let title = "16コミュニケーションタイプ診断";
-    let description = "あなたの会話・コミュニケーションスタイルを16タイプで診断します。";
-
-    if (typeof data === "string") {
-        try {
-            const answers: Answers = JSON.parse(decodeURIComponent(data));
-            const results = calculateScores(answers);
-            const char = determineCharacter(results);
-
-            // Use the character image for OGP
-            characterImage = `https://vibetype16.vercel.app/images/characters/${char.code}.png`;
-            title = `私のコミュタイプは【${char.label}】でした！ | 16コミュニケーションタイプ診断`;
-            description = char.catchCopy || description;
-
-        } catch (e) {
-            console.error("Metadata generation error", e);
-        }
-    } else if (typeof code === "string") {
-        const char = COMMUNICATION_TYPE_META.find(c => c.code === code);
-        if (char) {
-            characterImage = `https://vibetype16.vercel.app/images/characters/${char.code}.png`;
-            title = `${char.code}: ${char.label} | 16コミュニケーションタイプ診断`;
-            description = char.catchCopy || description;
-        }
-    }
-
-    return {
-        title: title,
-        description: description,
-        openGraph: {
-            title: title,
-            description: description,
-            images: [
-                {
-                    url: characterImage,
-                    width: 1200,
-                    height: 1200, // Assuming square images
-                    alt: title,
-                },
-            ],
-            type: "article",
-        },
-        twitter: {
-            card: "summary_large_image",
-            title: title,
-            description: description,
-            images: [characterImage],
-        },
-    };
-}
+// Static metadata for static export compatibility
+export const metadata: Metadata = {
+    title: "診断結果 | 16コミュニケーションタイプ診断",
+    description: "あなたの会話・コミュニケーションスタイルを16タイプで診断します。",
+    openGraph: {
+        title: "私のコミュタイプ診断結果 | 16コミュニケーションタイプ診断",
+        description: "あなたの会話・コミュニケーションスタイルを16タイプで診断します。",
+        images: [
+            {
+                url: "https://communicationtype16.com/images/ogp-default.png",
+                width: 1200,
+                height: 630,
+                alt: "16コミュニケーションタイプ診断",
+            },
+        ],
+        type: "article",
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "私のコミュタイプ診断結果 | 16コミュニケーションタイプ診断",
+        description: "あなたの会話・コミュニケーションスタイルを16タイプで診断します。",
+        images: ["https://communicationtype16.com/images/ogp-default.png"],
+    },
+};
 
 export default function ResultPage() {
     return (
