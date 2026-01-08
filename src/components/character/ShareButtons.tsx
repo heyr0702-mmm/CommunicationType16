@@ -12,7 +12,7 @@ interface ShareButtonsProps {
 
 export const ShareButtons: React.FC<ShareButtonsProps> = ({ character, content }) => {
     const shareText = `私のコミュタイプは【${character.label}】でした！\nキャッチコピー: ${content.free.catchCopy}\n\n#16コミュニケーションタイプ診断`;
-    const shareUrl = "https://communicationtype16.vercel.app/";
+    const shareUrl = "https://communicationtype16.com/";
     const twitterShareUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(shareUrl)}`;
     const lineShareUrl = `https://line.me/R/msg/text/?${encodeURIComponent(shareText + "\n" + shareUrl)}`;
 

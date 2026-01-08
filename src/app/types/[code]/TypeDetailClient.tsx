@@ -30,16 +30,16 @@ export function TypeDetailClient({ code }: Props) {
         '@context': 'https://schema.org',
         '@type': 'Article',
         headline: `${char.label} (${char.code}) の性格分析`,
-        image: `https://vibetype16.vercel.app/images/characters/${char.code}.png`,
+        image: `https://communicationtype16.com/images/characters/${char.code}.png`,
         author: {
             '@type': 'Organization',
             name: 'VibeType16',
-            url: 'https://communicationtype16.vercel.app'
+            url: 'https://communicationtype16.com'
         },
         description: content.free.catchCopy,
         mainEntityOfPage: {
             '@type': 'WebPage',
-            '@id': `https://communicationtype16.vercel.app/types/${code}`
+            '@id': `https://communicationtype16.com/types/${code}`
         }
     };
 

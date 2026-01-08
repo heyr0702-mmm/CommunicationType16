@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next';
 import { COMMUNICATION_TYPE_META } from '@/lib/constants';
 
-const BASE_url = 'https://communicationtype16.vercel.app';
+const BASE_url = 'https://communicationtype16.com';
 
 export default function sitemap(): MetadataRoute.Sitemap {
     return [

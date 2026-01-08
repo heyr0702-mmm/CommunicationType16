@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/Button";
 import { calculateCompatibility, CompatibilityResult } from "@/lib/compatibility";
 import { AdUnit } from "@/components/AdUnit";
 
-const SITE_URL = "https://vibetype16.vercel.app";
+const SITE_URL = "https://communicationtype16.com";
 
 function CompatibilityResultContent() {
     const searchParams = useSearchParams();
