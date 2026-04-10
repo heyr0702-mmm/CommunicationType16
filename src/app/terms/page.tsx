@@ -2,6 +2,12 @@ import React from "react";
 import { NotebookLayout } from "@/components/layout/NotebookLayout";
 import Link from "next/link";
 import { Button } from "@/components/ui/Button";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "利用規約 | 16コミュニケーションタイプ診断",
+    description: "16コミュニケーションタイプ診断の利用規約です。当サービスをご利用になる前にご確認ください。",
+};
 
 export default function TermsOfService() {
     return (

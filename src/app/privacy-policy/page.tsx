@@ -2,6 +2,12 @@ import React from "react";
 import { NotebookLayout } from "@/components/layout/NotebookLayout";
 import Link from "next/link";
 import { Button } from "@/components/ui/Button";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "プライバシーポリシー | 16コミュニケーションタイプ診断",
+    description: "16コミュニケーションタイプ診断のプライバシーポリシーです。取得する個人情報の取り扱いや、アクセス解析ツール、広告配信について定めています。",
+};
 
 export default function PrivacyPolicy() {
     return (
@@ -60,7 +66,7 @@ export default function PrivacyPolicy() {
                         </h2>
                         <p>
                             <strong>運営者:</strong> CommunicationType16運営チーム<br />
-                            <strong>連絡先:</strong> communicationtype16@example.com
+                            <strong>連絡先:</strong> <Link href="/contact" className="text-neon-pink underline">お問い合わせフォーム</Link>よりご連絡ください。
                         </p>
                     </section>
                 </div>

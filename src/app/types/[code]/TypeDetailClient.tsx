@@ -16,7 +16,7 @@ interface Props {
 }
 
 export function TypeDetailClient({ code }: Props) {
-    const [isReportOpen, setIsReportOpen] = useState(false);
+    const [isReportOpen, setIsReportOpen] = useState(true);
 
     const char = COMMUNICATION_TYPE_META.find((c) => c.code === code);
     const content = RESULT_CONTENTS[code];
@@ -74,11 +74,11 @@ export function TypeDetailClient({ code }: Props) {
                     </div>
                 </button>
 
-                {isReportOpen && (
-                    <div className="pt-0 p-4 border-2 border-t-0 border-dashed border-gray-400 rounded-b-lg bg-gray-50/50 animate-in slide-in-from-top-2 duration-300">
+                <div className={`overflow-hidden transition-all duration-300 ${isReportOpen ? 'opacity-100 max-h-[5000px]' : 'opacity-0 max-h-0'}`}>
+                    <div className="pt-0 p-4 border-2 border-t-0 border-dashed border-gray-400 rounded-b-lg bg-gray-50/50">
                         <DetailedReport content={content} />
                     </div>
-                )}
+                </div>
             </div>
 
             {/* Share Buttons */}

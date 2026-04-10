@@ -4,6 +4,12 @@ import { Button } from "@/components/ui/Button";
 import { COMMUNICATION_TYPE_META } from "@/lib/constants";
 import { TypeCard } from "@/components/ui/TypeCard";
 import { AdUnit } from "@/components/AdUnit";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "コミュニケーションタイプ一覧 | 16コミュニケーションタイプ診断",
+    description: "全16種類のコミュニケーションタイプ一覧。タイプごとの特徴や強み・弱みを詳しく解説します。",
+};
 
 export default function TypeList() {
     return (

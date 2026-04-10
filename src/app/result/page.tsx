@@ -25,6 +25,10 @@ export const metadata: Metadata = {
         description: "あなたの会話・コミュニケーションスタイルを16タイプで診断します。",
         images: ["https://communicationtype16.com/images/ogp-default.png"],
     },
+    robots: {
+        index: false,
+        follow: true,
+    },
 };
 
 export default function ResultPage() {

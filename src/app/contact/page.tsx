@@ -6,6 +6,10 @@ import { Button } from "@/components/ui/Button";
 export const metadata = {
     title: "お問い合わせ | 16コミュニケーションタイプ診断",
     description: "16コミュニケーションタイプ診断へのお問い合わせページです。",
+    openGraph: {
+        title: "お問い合わせ | 16コミュニケーションタイプ診断",
+        description: "16コミュニケーションタイプ診断へのお問い合わせページです。",
+    },
 };
 
 export default function ContactPage() {

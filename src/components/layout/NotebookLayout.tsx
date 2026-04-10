@@ -44,6 +44,10 @@ export const NotebookLayout: React.FC<NotebookLayoutProps> = ({ children, classN
                             About
                         </Link>
                         <span className="hidden sm:inline">|</span>
+                        <Link href="/column" className="hover:text-neon-blue transition-colors whitespace-nowrap">
+                            コラム
+                        </Link>
+                        <span className="hidden sm:inline">|</span>
                         <Link href="/vision" className="hover:text-neon-blue transition-colors whitespace-nowrap">
                             Vision
                         </Link>
@@ -61,7 +65,7 @@ export const NotebookLayout: React.FC<NotebookLayoutProps> = ({ children, classN
                         </Link>
                     </div>
                     <p className="text-[10px] text-gray-400 mt-2">
-                        © 2025 CommunicationType16
+                        © 2025-2026 CommunicationType16
                     </p>
                 </div>
             </div>

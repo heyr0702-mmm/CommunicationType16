@@ -2,6 +2,16 @@
 import Link from "next/link";
 import { NotebookLayout } from "@/components/layout/NotebookLayout";
 import { Button } from "@/components/ui/Button";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "About & Guide | 16コミュニケーションタイプ診断",
+    description: "16コミュニケーションタイプ診断の仕組みと使い方を解説。Power（主導権）・Warmth（温度感）・Speed（テンポ）・Volume（主張）の4つの軸であなたの会話スタイルを可視化します。",
+    openGraph: {
+        title: "About & Guide | 16コミュニケーションタイプ診断",
+        description: "16コミュニケーションタイプ診断の仕組みと使い方を解説。4つの軸であなたの会話スタイルを可視化します。",
+    },
+};
 
 export default function About() {
     return (
@@ -26,7 +36,7 @@ export default function About() {
 
                 <div className="text-sm sm:text-base leading-relaxed font-medium text-gray-800 space-y-4">
                     <p>
-                        人には、生まれ持った“性格”とは別に、会话のときに自然と現れる“スタイル（型）”があります。
+                        人には、生まれ持った“性格”とは別に、会話のときに自然と現れる“スタイル（型）”があります。
                     </p>
                     <p>
                         そのスタイルは、ひとりのとき、大人数のとき、仲の良い相手のとき——相手や場面によって、少しずつ形を変えます。良い悪いではなく、ただ“違い”として存在するもの。

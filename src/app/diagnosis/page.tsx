@@ -6,6 +6,7 @@ import { NotebookLayout } from "@/components/layout/NotebookLayout";
 import { QUESTIONS } from "@/lib/constants";
 import { Answers } from "@/lib/logic";
 
+
 export default function Diagnosis() {
     const router = useRouter();
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);

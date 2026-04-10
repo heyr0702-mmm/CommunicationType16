@@ -2,6 +2,12 @@
 import Link from "next/link";
 import { NotebookLayout } from "@/components/layout/NotebookLayout";
 import { Button } from "@/components/ui/Button";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Our Vision | 16コミュニケーションタイプ診断",
+    description: "性格じゃなくて、会話のスタイルの違い。どうしてこの診断を作ったのか、コミュニケーションのズレをなくすための私たちの想いをご紹介します。",
+};
 
 export default function Vision() {
     return (

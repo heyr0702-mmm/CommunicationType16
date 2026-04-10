@@ -15,7 +15,26 @@ export default function sitemap(): MetadataRoute.Sitemap {
             url: `${BASE_url}/types`,
             lastModified: new Date(),
             changeFrequency: 'weekly',
-            priority: 0.9,
+            priority: 0.8,
+        },
+
+        {
+            url: `${BASE_url}/about`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.5,
+        },
+        {
+            url: `${BASE_url}/vision`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.5,
+        },
+        {
+            url: `${BASE_url}/contact`,
+            lastModified: new Date(),
+            changeFrequency: 'yearly',
+            priority: 0.3,
         },
         {
             url: `${BASE_url}/diagnosis`,
@@ -24,10 +43,34 @@ export default function sitemap(): MetadataRoute.Sitemap {
             priority: 0.8,
         },
         {
-            url: `${BASE_url}/about`,
+            url: `${BASE_url}/compatibility`,
             lastModified: new Date(),
             changeFrequency: 'monthly',
-            priority: 0.5,
+            priority: 0.6,
+        },
+        {
+            url: `${BASE_url}/column`,
+            lastModified: new Date(),
+            changeFrequency: 'weekly',
+            priority: 0.7,
+        },
+        {
+            url: `${BASE_url}/column/communication-styles`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.6,
+        },
+        {
+            url: `${BASE_url}/column/improve-relationships`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.6,
+        },
+        {
+            url: `${BASE_url}/column/workplace-communication`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.6,
         },
         {
             url: `${BASE_url}/privacy-policy`,
