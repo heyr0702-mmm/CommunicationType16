@@ -10,10 +10,46 @@ export const metadata: Metadata = {
 
 const COLUMNS = [
     {
+        slug: "why-mismatch",
+        title: "「相性が悪い」の正体 — 私たちはただ\"違うゲーム\"をしているだけ",
+        description: "あの人と話が噛み合わないのは、性格でも相性でもありません。会話スタイルという\"別のゲーム\"をしているだけ。4つの軸で、すれ違いの正体をほどきます。",
+        emoji: "🎲",
+    },
+    {
         slug: "communication-styles",
         title: "コミュニケーションスタイルとは？4つの軸で読み解く会話のクセ",
-        description: "性格が良い・悪いではなく、ただのスタイルの違い。Power、Warmth、Speed、Volumeの4要素からあなたの型を紐解きます。",
+        description: "会話が噛み合わない原因は性格でも相性でもなく「スタイルの違い」。Power・Warmth・Speed・Volumeという4つの軸から、あなたと相手の会話のクセを読み解きます。",
         emoji: "🧩",
+    },
+    {
+        slug: "commu-skill-myth",
+        title: "「コミュ力が高い/低い」は幻想 — スタイルに優劣はない",
+        description: "「コミュ力が低い」と落ち込む前に。それは能力の差ではなく、会話スタイルの違いかもしれません。優劣のない4軸で、\"コミュ力神話\"をほどきます。",
+        emoji: "🪞",
+    },
+    {
+        slug: "axis-power",
+        title: "Power(主導権) — 会話を引っ張るD、受け止めるR、それぞれの流儀",
+        description: "会議で先に喋る人と、じっくり聞いてから話す人。その違いはPower(主導権)という軸のクセです。DとR、それぞれの強みとすれ違いを解説します。",
+        emoji: "🎤",
+    },
+    {
+        slug: "axis-warmth",
+        title: "Warmth(温度感) — 「わかって(E)」と「つまり?(C)」はどこですれ違うか",
+        description: "気持ちに寄り添ってほしいEと、まず結論を整理したいC。悪意のないすれ違いはWarmth(温度感)という軸のクセです。それぞれの流儀を解説します。",
+        emoji: "🌡️",
+    },
+    {
+        slug: "axis-speed",
+        title: "Speed(テンポ) — 会話が\"卓球(I)\"の人と\"手紙(S)\"の人",
+        description: "即レスでポンポン返す人と、じっくり考えてから話す人。テンポの違いはSpeed(テンポ)という軸のクセです。IとS、それぞれの流儀とすれ違いを解説します。",
+        emoji: "🏓",
+    },
+    {
+        slug: "axis-volume",
+        title: "Volume(存在感) — 場に自分を刻むX、そっと溶け込むZ、それぞれの強み",
+        description: "会議で目立つ人と、静かに聞き役に回る人。どちらも場に貢献しています。Volume(存在感)という軸から、XとZそれぞれの強みを解説します。",
+        emoji: "🎨",
     },
     {
         slug: "improve-relationships",
