@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/Button";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "人間関係を楽にする！コミュニケーションタイプ診断の活用法 | 16コミュニケーションタイプ診断",
+    title: "人間関係を楽にする！コミュニケーションタイプ診断の活用法",
     description: "合わない人ともうまく付き合うには？相手のスタイルを理解することで、会話のストレスを減らす具体的な方法。",
 };
 

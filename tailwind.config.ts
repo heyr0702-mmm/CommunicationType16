@@ -16,6 +16,7 @@ const config: Config = {
                 "neon-yellow": "#ccff00",
                 "neon-pink": "#ff00cc",
                 "neon-blue": "#00ccff",
+                "neon-green": "#00e68a",
             },
             fontFamily: {
                 handwriting: ["var(--font-handwriting)", "sans-serif"],

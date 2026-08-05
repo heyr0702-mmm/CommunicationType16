@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/Button";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "プライバシーポリシー | 16コミュニケーションタイプ診断",
+    title: "プライバシーポリシー",
     description: "16コミュニケーションタイプ診断のプライバシーポリシーです。取得する個人情報の取り扱いや、アクセス解析ツール、広告配信について定めています。",
 };
 

@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/Button";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "職場で使えるコミュニケーション改善テクニック | 16コミュニケーションタイプ診断",
+    title: "職場で使えるコミュニケーション改善テクニック",
     description: "会議での意見のすれ違いや、上司・部下とのコミュニケーションギャップを埋めるためのタイプ別アプローチ。",
 };
 

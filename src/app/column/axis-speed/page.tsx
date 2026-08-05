@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/Button";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "Speed(テンポ) — 会話が\"卓球(I)\"の人と\"手紙(S)\"の人 | 16コミュニケーションタイプ診断",
+    title: "Speed(テンポ) — 会話が\"卓球(I)\"の人と\"手紙(S)\"の人",
     description: "即レスでポンポン返す人と、じっくり考えてから話す人。テンポの違いはSpeed(テンポ)という軸のクセです。IとS、それぞれの流儀とすれ違いを解説します。",
 };
 

@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/Button";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "Volume(存在感) — 場に自分を刻むX、そっと溶け込むZ、それぞれの強み | 16コミュニケーションタイプ診断",
+    title: "Volume(存在感) — 場に自分を刻むX、そっと溶け込むZ、それぞれの強み",
     description: "会議で目立つ人と、静かに聞き役に回る人。どちらも場に貢献しています。Volume(存在感)という軸から、XとZそれぞれの強みを解説します。",
 };
 

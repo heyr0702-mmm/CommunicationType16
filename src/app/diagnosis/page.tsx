@@ -69,7 +69,7 @@ export default function Diagnosis() {
             {/* Question */}
             <div key={currentQuestionIndex} className="flex-grow flex items-center justify-center py-8 sm:py-12 min-h-[200px]">
                 <div className="bg-white/90 p-8 rounded-lg notebook-border shadow-lg w-full flex items-center justify-center text-center animate-in fade-in slide-in-from-bottom-4 duration-500">
-                    <h2 className="font-bold leading-relaxed text-sm sm:text-3xl">
+                    <h2 className="font-bold leading-relaxed text-xl sm:text-3xl">
                         {currentQuestion.text.split('\n').map((line, i) => (
                             <span key={i} className="block mb-2 sm:mb-0 sm:inline">{line}<br className="block sm:hidden" /></span>
                         ))}
@@ -98,7 +98,7 @@ export default function Diagnosis() {
                     {/* -1: Weak No */}
                     <button
                         onClick={() => handleAnswer(-1)}
-                        className={`w-10 h-10 sm:w-14 sm:h-14 rounded-full border-2 transition-all flex items-center justify-center group ${selectedValue === -1 ? 'bg-neon-yellow border-neon-yellow scale-95' : 'border-ink bg-white active:scale-95 active:bg-gray-200 sm:hover:bg-gray-100'}`}
+                        className={`w-11 h-11 sm:w-14 sm:h-14 rounded-full border-2 transition-all flex items-center justify-center group ${selectedValue === -1 ? 'bg-neon-yellow border-neon-yellow scale-95' : 'border-ink bg-white active:scale-95 active:bg-gray-200 sm:hover:bg-gray-100'}`}
                     >
                         <div className={`w-4 h-4 sm:w-5 sm:h-5 rounded-full transition-colors ${selectedValue === -1 ? 'bg-gray-400' : 'bg-gray-400 sm:group-hover:bg-neon-pink'}`} />
                     </button>
@@ -106,7 +106,7 @@ export default function Diagnosis() {
                     {/* 0: Neutral */}
                     <button
                         onClick={() => handleAnswer(0)}
-                        className={`w-8 h-8 sm:w-12 sm:h-12 rounded-full border-2 transition-all flex items-center justify-center ${selectedValue === 0 ? 'bg-neon-yellow border-neon-yellow scale-95' : 'border-ink bg-white active:scale-95 active:bg-gray-200 sm:hover:bg-gray-100'}`}
+                        className={`w-11 h-11 sm:w-12 sm:h-12 rounded-full border-2 transition-all flex items-center justify-center ${selectedValue === 0 ? 'bg-neon-yellow border-neon-yellow scale-95' : 'border-ink bg-white active:scale-95 active:bg-gray-200 sm:hover:bg-gray-100'}`}
                     >
                         <div className="w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-gray-300" />
                     </button>
@@ -114,7 +114,7 @@ export default function Diagnosis() {
                     {/* +1: Weak Yes */}
                     <button
                         onClick={() => handleAnswer(1)}
-                        className={`w-10 h-10 sm:w-14 sm:h-14 rounded-full border-2 transition-all flex items-center justify-center group ${selectedValue === 1 ? 'bg-neon-yellow border-neon-yellow scale-95' : 'border-ink bg-white active:scale-95 active:bg-gray-200 sm:hover:bg-gray-100'}`}
+                        className={`w-11 h-11 sm:w-14 sm:h-14 rounded-full border-2 transition-all flex items-center justify-center group ${selectedValue === 1 ? 'bg-neon-yellow border-neon-yellow scale-95' : 'border-ink bg-white active:scale-95 active:bg-gray-200 sm:hover:bg-gray-100'}`}
                     >
                         <div className={`w-4 h-4 sm:w-5 sm:h-5 rounded-full transition-colors ${selectedValue === 1 ? 'bg-gray-400' : 'bg-gray-400 sm:group-hover:bg-neon-blue'}`} />
                     </button>

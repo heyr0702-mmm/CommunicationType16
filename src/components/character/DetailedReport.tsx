@@ -25,7 +25,7 @@ export const DetailedReport: React.FC<DetailedReportProps> = ({ content, onClose
                     {content.unlocked.communicationGaps.items.map((item, i) => (
                         <div key={i} className="bg-red-50 p-4 rounded border border-red-100">
                             <p className="font-bold text-red-800 mb-1">⚡ {item.pattern}</p>
-                            <p className="text-sm text-red-600">💡 {item.advice}</p>
+                            <p className="text-base text-red-600 leading-[1.8]">💡 {item.advice}</p>
                         </div>
                     ))}
                 </div>
@@ -48,7 +48,7 @@ export const DetailedReport: React.FC<DetailedReportProps> = ({ content, onClose
                                 {content.unlocked.compatibility.best.code}
                             </p>
                         </div>
-                        <p className="text-sm text-blue-800 leading-relaxed">{content.unlocked.compatibility.best.reason}</p>
+                        <p className="text-base text-blue-800 leading-[1.8]">{content.unlocked.compatibility.best.reason}</p>
                     </div>
                     <div className="bg-gray-50 p-4 rounded border border-gray-200">
                         <span className="text-xs font-bold bg-gray-200 text-gray-800 px-2 py-1 rounded mb-2 inline-block">WORST</span>
@@ -60,7 +60,7 @@ export const DetailedReport: React.FC<DetailedReportProps> = ({ content, onClose
                                 {content.unlocked.compatibility.worst.code}
                             </p>
                         </div>
-                        <p className="text-sm text-gray-800 leading-relaxed">{content.unlocked.compatibility.worst.reason}</p>
+                        <p className="text-base text-gray-800 leading-[1.8]">{content.unlocked.compatibility.worst.reason}</p>
                     </div>
                 </div>
             </div>

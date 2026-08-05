@@ -4,7 +4,7 @@ import { ResultView } from "./ResultView";
 
 // Static metadata for static export compatibility
 export const metadata: Metadata = {
-    title: "診断結果 | 16コミュニケーションタイプ診断",
+    title: "診断結果",
     description: "あなたの会話・コミュニケーションスタイルを16タイプで診断します。",
     openGraph: {
         title: "私のコミュタイプ診断結果 | 16コミュニケーションタイプ診断",

@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/Button";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "「コミュ力が高い/低い」は幻想 — スタイルに優劣はない | 16コミュニケーションタイプ診断",
+    title: "「コミュ力が高い/低い」は幻想 — スタイルに優劣はない",
     description: "「コミュ力が低い」と落ち込む前に。それは能力の差ではなく、会話スタイルの違いかもしれません。優劣のない4軸で、\"コミュ力神話\"をほどきます。",
 };
 

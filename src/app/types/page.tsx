@@ -7,7 +7,7 @@ import { AdUnit } from "@/components/AdUnit";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "コミュニケーションタイプ一覧 | 16コミュニケーションタイプ診断",
+    title: "コミュニケーションタイプ一覧",
     description: "全16種類のコミュニケーションタイプ一覧。タイプごとの特徴や強み・弱みを詳しく解説します。",
 };
 

@@ -67,6 +67,12 @@ export function ResultView() {
     // shareText/shareUrl logic moved to ShareButtons component, but if needed elsewhere...
     // Removed unused logic
 
+    const AXIS_CODES: Record<string, { left: string; right: string }> = {
+        Power: { left: 'R', right: 'D' },
+        Warmth: { left: 'C', right: 'E' },
+        Speed: { left: 'S', right: 'I' },
+        Volume: { left: 'Z', right: 'X' },
+    };
 
     return (
         <NotebookLayout className="flex flex-col space-y-8 pb-20">
@@ -80,19 +86,21 @@ export function ResultView() {
                         {axisResults.map((result) => (
                             <div key={result.axis}>
                                 <p className="text-xs font-bold text-gray-500 mb-1 text-center">
-                                    {result.axis === 'Power' && 'パワー (主導権)'}
-                                    {result.axis === 'Warmth' && 'ウォーム (温度感)'}
-                                    {result.axis === 'Speed' && 'スピード (テンポ)'}
-                                    {result.axis === 'Volume' && 'ボリューム (主張)'}
+                                    {result.axis === 'Power' && 'Power (主導権)'}
+                                    {result.axis === 'Warmth' && 'Warmth (温度感)'}
+                                    {result.axis === 'Speed' && 'Speed (テンポ)'}
+                                    {result.axis === 'Volume' && 'Volume (存在感)'}
                                 </p>
                                 <BipolarBar
                                     value={result.percentage}
                                     labelLeft={result.labelNegative}
                                     labelRight={result.labelPositive}
+                                    codeLeft={AXIS_CODES[result.axis]?.left}
+                                    codeRight={AXIS_CODES[result.axis]?.right}
                                     color={
                                         result.axis === 'Power' ? 'yellow' :
                                             result.axis === 'Warmth' ? 'pink' :
-                                                result.axis === 'Speed' ? 'blue' : 'yellow'
+                                                result.axis === 'Speed' ? 'blue' : 'green'
                                     }
                                 />
                             </div>

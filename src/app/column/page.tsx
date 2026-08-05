@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/Button";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "コミュニケーション改善コラム | 16コミュニケーションタイプ診断",
+    title: "コミュニケーション改善コラム",
     description: "人間関係をスムーズにするためのコミュニケーションのコツや、会話スタイルの違いから生じるすれ違いを防ぐ方法などを解説するコラムです。",
 };
 
