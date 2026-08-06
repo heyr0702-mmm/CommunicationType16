@@ -151,6 +151,42 @@ export default function sitemap(): MetadataRoute.Sitemap {
             priority: 0.6,
         },
         {
+            url: `${BASE_url}/column/remote-text-warmth`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.6,
+        },
+        {
+            url: `${BASE_url}/column/first-meeting-speed`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.6,
+        },
+        {
+            url: `${BASE_url}/column/silence-awkward-i`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.6,
+        },
+        {
+            url: `${BASE_url}/column/romance-mismatch`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.6,
+        },
+        {
+            url: `${BASE_url}/column/family-style-gap`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.6,
+        },
+        {
+            url: `${BASE_url}/column/good-listener`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.6,
+        },
+        {
             url: `${BASE_url}/privacy-policy`,
             lastModified: new Date(),
             changeFrequency: 'yearly',
