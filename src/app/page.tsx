@@ -17,7 +17,7 @@ export default function Home() {
               New!
             </span>
 
-            <h1 className="text-[clamp(1rem,4.5vw,3rem)] font-bold tracking-tighter font-handwriting text-ink leading-tight text-center">
+            <h1 className="text-[clamp(1.75rem,7vw,3rem)] font-bold tracking-tighter font-handwriting text-ink leading-tight text-center">
               16コミュニケーション<br className="hidden sm:block" />タイプ診断
             </h1>
             <p className="text-xs sm:text-lg font-bold text-gray-700 bg-neon-yellow/50 px-4 py-1 mt-4 inline-block rounded">

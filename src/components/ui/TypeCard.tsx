@@ -36,7 +36,7 @@ export const TypeCard: React.FC<TypeCardProps> = ({ code, label, catchCopy }) =>
                 </h2>
             </div>
 
-            <p className="text-sm font-medium text-gray-700 leading-relaxed bg-gray-100 p-3 rounded w-full">
+            <p className="text-base font-medium text-gray-700 leading-relaxed bg-gray-100 p-3 rounded w-full">
                 {catchCopy}
             </p>
         </div>
