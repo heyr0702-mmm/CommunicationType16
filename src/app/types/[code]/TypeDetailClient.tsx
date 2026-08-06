@@ -33,7 +33,7 @@ export function TypeDetailClient({ code }: Props) {
         image: `https://communicationtype16.com/images/characters/${char.code}.png`,
         author: {
             '@type': 'Organization',
-            name: 'VibeType16',
+            name: '16コミュニケーションタイプ診断',
             url: 'https://communicationtype16.com'
         },
         description: content.free.catchCopy,
