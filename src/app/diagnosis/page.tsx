@@ -1,146 +1,120 @@
-"use client";
+import Link from "next/link";
+import { Metadata } from "next";
+import DiagnosisClient from "./DiagnosisClient";
 
-import { useState } from "react";
-import { useRouter } from "next/navigation";
-import { NotebookLayout } from "@/components/layout/NotebookLayout";
-import { QUESTIONS } from "@/lib/constants";
-import { Answers } from "@/lib/logic";
+export const metadata: Metadata = {
+    title: "コミュニケーションタイプ診断（全28問・無料）",
+    description:
+        "全28問・約3分。Power(主導権)・Warmth(温度感)・Speed(テンポ)・Volume(存在感)の4軸から、あなたの会話スタイルを16タイプで判定します。登録不要・無料。",
+    openGraph: {
+        title: "コミュニケーションタイプ診断（全28問・無料）| 16コミュニケーションタイプ診断",
+        description:
+            "全28問・約3分。4軸からあなたの会話スタイルを16タイプで判定します。登録不要・無料。",
+        type: "article",
+    },
+};
 
-
-export default function Diagnosis() {
-    const router = useRouter();
-    const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-    const [answers, setAnswers] = useState<Answers>({});
-    const [isTransitioning, setIsTransitioning] = useState(false);
-    const [selectedValue, setSelectedValue] = useState<number | null>(null);
-
-    const currentQuestion = QUESTIONS[currentQuestionIndex];
-    const progress = ((currentQuestionIndex + 1) / QUESTIONS.length) * 100;
-
-    const handleAnswer = (value: number) => {
-        if (isTransitioning) return;
-
-        setSelectedValue(value);
-        setAnswers((prev) => ({ ...prev, [currentQuestion.id]: value }));
-        setIsTransitioning(true);
-
-        // Auto-advance after a short delay for visual feedback
-        setTimeout(() => {
-            if (currentQuestionIndex < QUESTIONS.length - 1) {
-                setCurrentQuestionIndex((prev) => prev + 1);
-                setSelectedValue(null);
-                setIsTransitioning(false);
-            } else {
-                finishDiagnosis({ ...answers, [currentQuestion.id]: value });
-            }
-        }, 300);
-    };
-
-    const finishDiagnosis = (finalAnswers: Answers) => {
-        const answersStr = encodeURIComponent(JSON.stringify(finalAnswers));
-        router.push(`/result?data=${answersStr}`);
-    };
-
-    const handleBack = () => {
-        if (currentQuestionIndex > 0) {
-            setCurrentQuestionIndex((prev) => prev - 1);
-        } else {
-            router.push("/");
-        }
-    };
-
+export default function DiagnosisPage() {
     return (
-        <NotebookLayout className="flex flex-col justify-between max-w-2xl mx-auto h-full py-4">
-            {/* Header / Progress */}
-            <div className="space-y-2">
-                <div className="flex justify-between items-end border-b-2 border-ink pb-2">
-                    <span className="font-bold font-handwriting text-xl">
-                        Q.{currentQuestionIndex + 1} <span className="text-sm text-gray-500">/ {QUESTIONS.length}</span>
-                    </span>
-                </div>
-                <div className="w-full h-2 bg-gray-200 rounded-full overflow-hidden border border-ink">
-                    <div
-                        className="h-full bg-neon-yellow transition-all duration-300 ease-out"
-                        style={{ width: `${progress}%` }}
-                    />
-                </div>
-            </div>
+        <DiagnosisClient>
+            <section className="mt-16 pt-8 border-t-2 border-dashed border-gray-300 space-y-5 text-gray-800 leading-relaxed font-medium text-sm">
+                <h2 className="text-xl font-bold font-handwriting text-ink">この診断について</h2>
 
-            {/* Question */}
-            <div key={currentQuestionIndex} className="flex-grow flex items-center justify-center py-8 sm:py-12 min-h-[200px]">
-                <div className="bg-white/90 p-8 rounded-lg notebook-border shadow-lg w-full flex items-center justify-center text-center animate-in fade-in slide-in-from-bottom-4 duration-500">
-                    <h2 className="font-bold leading-relaxed text-xl sm:text-3xl">
-                        {currentQuestion.text.split('\n').map((line, i) => (
-                            <span key={i} className="block mb-2 sm:mb-0 sm:inline">{line}<br className="block sm:hidden" /></span>
-                        ))}
-                    </h2>
-                </div>
-            </div>
+                <p>
+                    この診断は、あなたが会話のときに無意識にとっている「スタイル（型）」を可視化するものです。性格の良し悪しや、コミュ力の高低を測るテストではありません。
+                </p>
 
-            {/* Answer Area */}
-            <div className="space-y-6 mb-8">
-                {/* Scale Labels */}
-                <div className="flex justify-between text-xs sm:text-sm font-bold px-2">
-                    <span className="text-gray-500">No</span>
-                    <span className="text-gray-500">Yes</span>
-                </div>
+                <h3 className="text-base font-bold text-ink border-l-4 border-neon-blue pl-3 py-1 mt-6">
+                    設問の構成
+                </h3>
+                <p>
+                    全28問、所要時間はおよそ3分です。登録もメールアドレスも必要ありません。各設問には「No」から「Yes」まで5段階で答えます。深く考え込まず、
+                    <strong>直感で反応したほうが結果は正確になります。</strong>
+                    どちらとも言えない設問は、真ん中を選んで先に進んで大丈夫です。
+                </p>
+                <p>
+                    28問は、4つの軸に7問ずつ割り当てられています。
+                </p>
+                <ul className="list-disc pl-5 space-y-2">
+                    <li>
+                        <strong>⚡ Power（主導権）</strong>
+                        — 会話のハンドルを握るクセ。自分で決めて前に進めるD（主導）と、まず受け止めるR（受容）
+                    </li>
+                    <li>
+                        <strong>❤️ Warmth（温度感）</strong>
+                        — 言葉に乗せる感情の量。共感でつながるE（共感）と、筋道で整理するC（論理）
+                    </li>
+                    <li>
+                        <strong>🚀 Speed（テンポ）</strong>
+                        — 思いついてから口に出すまでの速さ。即レスのI（即興）と、噛みしめてから返すS（熟考）
+                    </li>
+                    <li>
+                        <strong>🔊 Volume（存在感）</strong>
+                        — 場の中でどれくらい自分を出すか。発信するX（表現大）と、聞き役に回るZ（聞き役）
+                    </li>
+                </ul>
+                <p>
+                    この4軸それぞれで、どちら寄りかを判定します。2×2×2×2で、結果は16タイプのいずれかになります。
+                </p>
 
-                {/* Buttons */}
-                <div className="flex justify-between items-center gap-2 sm:gap-4">
-                    {/* -2: Strong No */}
-                    <button
-                        onClick={() => handleAnswer(-2)}
-                        className={`w-12 h-12 sm:w-16 sm:h-16 rounded-full border-2 transition-all flex items-center justify-center group ${selectedValue === -2 ? 'bg-neon-yellow border-neon-yellow scale-95' : 'border-ink bg-white active:scale-95 active:bg-gray-200 sm:hover:bg-gray-100'}`}
-                    >
-                        <div className={`w-6 h-6 sm:w-8 sm:h-8 rounded-full transition-colors ${selectedValue === -2 ? 'bg-ink' : 'bg-ink sm:group-hover:bg-neon-pink'}`} />
-                    </button>
+                <h3 className="text-base font-bold text-ink border-l-4 border-neon-pink pl-3 py-1 mt-6">
+                    結果の見方
+                </h3>
+                <p>
+                    診断が終わると、あなたのタイプ名（「親分」「オカン」「黒幕」など）と、4軸それぞれがどちらにどれくらい寄っているかのバーが表示されます。
+                </p>
+                <p>
+                    大事なのは、
+                    <strong>タイプ名よりもバーの傾き</strong>
+                    です。ぴったり真ん中に近い軸は、相手や場面によって振れやすい軸ということ。「家族といるときと職場にいるときで、自分の喋り方がぜんぜん違う」と感じたことがある人は、その軸が中央付近にあることが多いです。
+                </p>
+                <p>
+                    また、
+                    <strong>16タイプに優劣はありません。</strong>
+                    会議を前に進める人も、みんなの声を拾う人も、どちらもその場に必要な役割です。この診断は、あなたを分類して評価するためではなく、「自分はこういう喋り方をしているんだ」と気づくためのものです。
+                </p>
 
-                    {/* -1: Weak No */}
-                    <button
-                        onClick={() => handleAnswer(-1)}
-                        className={`w-11 h-11 sm:w-14 sm:h-14 rounded-full border-2 transition-all flex items-center justify-center group ${selectedValue === -1 ? 'bg-neon-yellow border-neon-yellow scale-95' : 'border-ink bg-white active:scale-95 active:bg-gray-200 sm:hover:bg-gray-100'}`}
-                    >
-                        <div className={`w-4 h-4 sm:w-5 sm:h-5 rounded-full transition-colors ${selectedValue === -1 ? 'bg-gray-400' : 'bg-gray-400 sm:group-hover:bg-neon-pink'}`} />
-                    </button>
+                <h3 className="text-base font-bold text-ink border-l-4 border-neon-yellow pl-3 py-1 mt-6">
+                    診断のあとにできること
+                </h3>
+                <ul className="list-disc pl-5 space-y-2">
+                    <li>結果ページから、自分のタイプの詳しい解説（あるある・すれ違いポイント・相性）が読めます</li>
+                    <li>
+                        <Link href="/compatibility" className="text-neon-blue hover:underline">
+                            2人の相性診断
+                        </Link>
+                        で、友達・恋人・家族との組み合わせを確かめられます
+                    </li>
+                    <li>
+                        <Link href="/types" className="text-neon-blue hover:underline">
+                            16タイプ一覧
+                        </Link>
+                        で、周りの人がどのタイプかを探せます
+                    </li>
+                </ul>
 
-                    {/* 0: Neutral */}
-                    <button
-                        onClick={() => handleAnswer(0)}
-                        className={`w-11 h-11 sm:w-12 sm:h-12 rounded-full border-2 transition-all flex items-center justify-center ${selectedValue === 0 ? 'bg-neon-yellow border-neon-yellow scale-95' : 'border-ink bg-white active:scale-95 active:bg-gray-200 sm:hover:bg-gray-100'}`}
-                    >
-                        <div className="w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-gray-300" />
-                    </button>
-
-                    {/* +1: Weak Yes */}
-                    <button
-                        onClick={() => handleAnswer(1)}
-                        className={`w-11 h-11 sm:w-14 sm:h-14 rounded-full border-2 transition-all flex items-center justify-center group ${selectedValue === 1 ? 'bg-neon-yellow border-neon-yellow scale-95' : 'border-ink bg-white active:scale-95 active:bg-gray-200 sm:hover:bg-gray-100'}`}
-                    >
-                        <div className={`w-4 h-4 sm:w-5 sm:h-5 rounded-full transition-colors ${selectedValue === 1 ? 'bg-gray-400' : 'bg-gray-400 sm:group-hover:bg-neon-blue'}`} />
-                    </button>
-
-                    {/* +2: Strong Yes */}
-                    <button
-                        onClick={() => handleAnswer(2)}
-                        className={`w-12 h-12 sm:w-16 sm:h-16 rounded-full border-2 transition-all flex items-center justify-center group ${selectedValue === 2 ? 'bg-neon-yellow border-neon-yellow scale-95' : 'border-ink bg-white active:scale-95 active:bg-gray-200 sm:hover:bg-gray-100'}`}
-                    >
-                        <div className={`w-6 h-6 sm:w-8 sm:h-8 rounded-full transition-colors ${selectedValue === 2 ? 'bg-ink' : 'bg-ink sm:group-hover:bg-neon-blue'}`} />
-                    </button>
-                </div>
-
-                <div className="text-center text-xs text-gray-400 mt-4">
-                    直感で答えてください
-                </div>
-
-                {/* Back Button */}
-                <button
-                    onClick={handleBack}
-                    disabled={isTransitioning}
-                    className="text-gray-500 hover:text-gray-700 text-sm mt-4 disabled:opacity-50 transition-colors"
-                >
-                    ← 前の設問に戻る
-                </button>
-            </div>
-        </NotebookLayout>
+                <h3 className="text-base font-bold text-ink border-l-4 border-neon-blue pl-3 py-1 mt-6">
+                    ご注意
+                </h3>
+                <p className="text-gray-600">
+                    この診断は学術的な性格検査ではなく、日常の会話を振り返るためのツールです。医学的・心理学的な診断や、採用選考・人事評価の判断材料として使うことは想定していません。結果の計算はすべてお使いのブラウザ内で行われ、当サイトが回答内容を会員情報として蓄積することはありません（アクセス解析の取り扱いは
+                    <Link href="/privacy-policy" className="text-neon-blue hover:underline">
+                        プライバシーポリシー
+                    </Link>
+                    をご覧ください）。
+                </p>
+                <p className="text-gray-600">
+                    診断の設計の考え方については
+                    <Link href="/about" className="text-neon-blue hover:underline">
+                        About
+                    </Link>
+                    、この診断を作った背景については
+                    <Link href="/vision" className="text-neon-blue hover:underline">
+                        Vision
+                    </Link>
+                    をご覧ください。
+                </p>
+            </section>
+        </DiagnosisClient>
     );
 }
