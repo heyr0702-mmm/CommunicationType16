@@ -66,8 +66,10 @@ export default function PrivacyPolicy() {
                             5. 運営者情報
                         </h2>
                         <p>
-                            <strong>運営者:</strong> CommunicationType16運営チーム<br />
-                            <strong>連絡先:</strong> <Link href="/contact" className="text-neon-pink underline">お問い合わせフォーム</Link>よりご連絡ください。
+                            <strong>運営者:</strong> 涼平（個人）<br />
+                            <strong>サイト名:</strong> 16コミュニケーションタイプ診断<br />
+                            <strong>連絡先:</strong> <Link href="/contact" className="text-neon-pink underline">お問い合わせフォーム</Link>よりご連絡ください。<br />
+                            <strong>詳細:</strong> <Link href="/operator" className="text-neon-pink underline">運営者情報</Link>のページに、運営開始時期・運営方針を掲載しています。
                         </p>
                     </section>
                 </div>
