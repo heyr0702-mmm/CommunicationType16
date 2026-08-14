@@ -109,6 +109,16 @@ export const CharacterProfile: React.FC<CharacterProfileProps> = ({ character, c
                     ))}
                 </ul>
             </div>
+
+            {/* タイプ固有セクション（見出しがタイプごとに違う） */}
+            {content.free.signature?.map((sec, i) => (
+                <div key={i} className="mt-6 bg-white/70 rounded-lg notebook-border p-3 sm:p-4">
+                    <h4 className="font-bold text-ink border-l-4 border-neon-blue pl-3 py-1 mb-2">
+                        {sec.title}
+                    </h4>
+                    <p className="text-base text-gray-700 leading-[1.8]">{sec.body}</p>
+                </div>
+            ))}
         </div>
     );
 };

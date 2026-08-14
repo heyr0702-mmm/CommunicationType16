@@ -30,6 +30,12 @@ export type ResultContent = {
             title: string;
             items: string[];
         };
+
+        // タイプ固有の掘り下げ（見出しもタイプごとに変える。共通テンプレートに乗せない）
+        signature?: {
+            title: string;
+            body: string;
+        }[];
     };
 
     // 🟡 第2層：詳細エリア（審査用アコーディオン / 将来は動画リワード）

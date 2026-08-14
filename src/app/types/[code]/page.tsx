@@ -16,7 +16,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const code = params.code.toUpperCase();
     const type = COMMUNICATION_TYPE_META.find((t) => t.code === code);
     if (!type) return {};
-    const title = `${type.label}（${code}）| 16コミュニケーションタイプ診断`;
+    // layout.tsx の title.template が「| サイト名」を付けるので、ここでは付けない（二重表記の防止）
+    const title = `${type.label}（${code}）`;
+    // OGP/Twitter にはテンプレートが効かないため、こちらはサイト名込みの完全形を使う
+    const fullTitle = `${title} | 16コミュニケーションタイプ診断`;
     const description = type.catchCopy;
     const ogImage = `/images/ogp/${code}.png`;
     const url = `https://communicationtype16.com/types/${code}`;
@@ -25,7 +28,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         description,
         alternates: { canonical: url },
         openGraph: {
-            title,
+            title: fullTitle,
             description,
             url,
             type: "article",
@@ -33,7 +36,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         },
         twitter: {
             card: "summary_large_image",
-            title,
+            title: fullTitle,
             description,
             images: [ogImage],
         },

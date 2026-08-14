@@ -48,6 +48,10 @@ export const NotebookLayout: React.FC<NotebookLayoutProps> = ({ children, classN
                             コラム
                         </Link>
                         <span className="hidden sm:inline">|</span>
+                        <Link href="/methodology" className="hover:text-neon-blue transition-colors whitespace-nowrap">
+                            診断の仕組み
+                        </Link>
+                        <span className="hidden sm:inline">|</span>
                         <Link href="/vision" className="hover:text-neon-blue transition-colors whitespace-nowrap">
                             Vision
                         </Link>
