@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/Button";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
+    alternates: { canonical: "/column/first-meeting-speed" },
     title: "初対面で会話が続かない — Speedと\"質問\"の技術",
     description: "初対面で会話が続かず気まずい沈黙が生まれるのは、コミュ力の低さではありません。Speed(テンポ)軸の噛み合わせと、質問の作り方の問題です。",
 };

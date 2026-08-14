@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/Button";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
+    alternates: { canonical: "/column/type-compatibility-map" },
     title: "相性の良い組み合わせ・噛み合わない組み合わせ — 16タイプ関係地図",
     description: "「相性がいい/悪い」は実は少しズレた表現です。4軸の組み合わせで\"起きやすいこと\"を地図にすると、どんな2人の間にも扱い方が見えてきます。",
 };

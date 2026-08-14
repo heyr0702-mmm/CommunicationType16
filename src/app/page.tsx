@@ -1,7 +1,12 @@
 import Link from "next/link";
+import { Metadata } from "next";
 import { NotebookLayout } from "@/components/layout/NotebookLayout";
 import { Button } from "@/components/ui/Button";
 import { AdUnit } from "@/components/AdUnit";
+
+export const metadata: Metadata = {
+    alternates: { canonical: "/" },
+};
 
 export default function Home() {
   return (

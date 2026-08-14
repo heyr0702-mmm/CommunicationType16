@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/Button";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
+    alternates: { canonical: "/column/axis-warmth" },
     title: "Warmth(温度感) — 「わかって(E)」と「つまり?(C)」はどこですれ違うか",
     description: "気持ちに寄り添ってほしいEと、まず結論を整理したいC。悪意のないすれ違いはWarmth(温度感)という軸のクセです。それぞれの流儀を解説します。",
 };

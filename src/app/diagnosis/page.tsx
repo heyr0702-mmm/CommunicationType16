@@ -3,6 +3,7 @@ import { Metadata } from "next";
 import DiagnosisClient from "./DiagnosisClient";
 
 export const metadata: Metadata = {
+    alternates: { canonical: "/diagnosis" },
     title: "コミュニケーションタイプ診断（全28問・無料）",
     description:
         "全28問・約3分。Power(主導権)・Warmth(温度感)・Speed(テンポ)・Volume(存在感)の4軸から、あなたの会話スタイルを16タイプで判定します。登録不要・無料。",

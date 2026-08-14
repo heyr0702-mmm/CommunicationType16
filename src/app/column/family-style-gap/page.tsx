@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/Button";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
+    alternates: { canonical: "/column/family-style-gap" },
     title: "親子・家族の\"通じなさ\"は世代でなくスタイルの組み合わせ",
     description: "「親とは価値観が合わない」の正体は、世代差ではなく4軸のスタイルの組み合わせかもしれません。実家に帰るたびに疲れる理由を、4軸で読み解きます。",
 };

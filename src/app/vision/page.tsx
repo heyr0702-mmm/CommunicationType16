@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/Button";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
+    alternates: { canonical: "/vision" },
     title: "Our Vision",
     description: "性格じゃなくて、会話のスタイルの違い。どうしてこの診断を作ったのか、コミュニケーションのズレをなくすための私たちの想いをご紹介します。",
 };

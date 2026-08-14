@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/Button";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
+    alternates: { canonical: "/column/good-listener" },
     title: "聞き上手になる — 相手のスタイルに合わせる相槌と質問",
     description: "聞き上手とは、話し方が上手いことではありません。相手の4軸のスタイルに合わせて、相槌と質問を微調整できることです。D/R・E/C・I/S・X/Z別の聞き方のコツをまとめました。",
 };

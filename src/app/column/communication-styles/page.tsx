@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/Button";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
+    alternates: { canonical: "/column/communication-styles" },
     title: "コミュニケーションスタイルとは？4つの軸で読み解く会話のクセ",
     description: "会話が噛み合わない原因は性格でも相性でもなく「スタイルの違い」。Power・Warmth・Speed・Volumeという4つの軸から、あなたと相手の会話のクセを読み解きます。",
 };

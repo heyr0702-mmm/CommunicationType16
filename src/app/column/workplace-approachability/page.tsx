@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/Button";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
+    alternates: { canonical: "/column/workplace-approachability" },
     title: "職場で「話しかけづらい」と思われるのは性格じゃない — Volume(Z)/Warmth(C)の見え方",
     description: "「話しかけづらい」と言われるのは、冷たいからでも怖いからでもありません。ZとCという2つの軸の\"見え方\"の問題です。誤解を解く工夫を紹介します。",
 };

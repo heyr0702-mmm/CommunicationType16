@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/Button";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
+    alternates: { canonical: "/column/axis-power" },
     title: "Power(主導権) — 会話を引っ張るD、受け止めるR、それぞれの流儀",
     description: "会議で先に喋る人と、じっくり聞いてから話す人。その違いはPower(主導権)という軸のクセです。DとR、それぞれの強みとすれ違いを解説します。",
 };

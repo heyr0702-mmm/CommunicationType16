@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/Button";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
+    alternates: { canonical: "/column/meeting-silence" },
     title: "会議で発言できないのは熟考型(S)だから — 沈黙を味方にする一言の作り方",
     description: "会議で発言できず落ち込む必要はありません。それは能力の問題ではなく、熟考型(S)というテンポのクセです。沈黙を活かす一言の作り方を紹介します。",
 };

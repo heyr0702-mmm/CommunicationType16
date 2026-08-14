@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/Button";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
+    alternates: { canonical: "/column/remote-text-warmth" },
     title: "リモート・テキストで冷たく見えない伝え方 — 声と表情が消えると何が起きるか",
     description: "「あの人のチャット、なんか冷たい」と思われがち、あるいは思ってしまう。それは性格ではなく、テキストでWarmth(温度感)の信号が消えてしまうからです。E・C別の対処法を紹介します。",
 };

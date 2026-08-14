@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/Button";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
+    alternates: { canonical: "/column/combo-warmth" },
     title: "共感型(E)×論理型(C) — 「気持ち」と「結論」の翻訳術",
     description: "「まず分かってほしい」というEと「まず結論から聞きたい」というC。すれ違うのは冷たいからでも重いからでもなく、優先順位の違いです。翻訳のコツを紹介します。",
 };

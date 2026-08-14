@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/Button";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
+    alternates: { canonical: "/column/why-i-made-this" },
     title: "私がこの診断を作った理由 — 自分を言語化できると、なぜ心が軽くなるのか",
     description:
         "中学生の頃に診断サイトにハマり、就職活動でも日常でも「自分を言葉にすること」に助けられてきました。運営者が16コミュニケーションタイプ診断を作るまでの、個人的な話です。",

@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/Button";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
+    alternates: { canonical: "/column/hourenso-style" },
     title: "報連相が噛み合わないのは\"型\"の違い — 結論から(C)／背景から(E)、どちらも正しい",
     description: "「結論から話して」と言われて戸惑う人も、「もっと状況を教えて」と言われて戸惑う人もいます。報連相のすれ違いは、CとEという型の違いです。",
 };

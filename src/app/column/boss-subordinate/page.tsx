@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/Button";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
+    alternates: { canonical: "/column/boss-subordinate" },
     title: "上司・部下のすれ違いを4軸で読み解く",
     description: "上司と合わない、部下の考えが分からない。それは立場の問題ではなく、4軸のスタイルの組み合わせです。よくあるすれ違いパターンを解説します。",
 };

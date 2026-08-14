@@ -5,6 +5,7 @@ import { NotebookLayout } from "@/components/layout/NotebookLayout";
 import CompatibilityTool from "./CompatibilityTool";
 
 export const metadata: Metadata = {
+    alternates: { canonical: "/compatibility" },
     title: "2人の相性診断 — 「合わない」の正体は、スタイルの組み合わせ",
     description:
         "友達・恋人・家族との会話が噛み合わないのは、性格が悪いからではなく会話スタイルの組み合わせが違うから。16タイプの組み合わせから、2人の会話のクセと噛み合わせ方を診断します。",

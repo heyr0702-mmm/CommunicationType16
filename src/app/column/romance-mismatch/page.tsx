@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/Button";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
+    alternates: { canonical: "/column/romance-mismatch" },
     title: "恋愛・パートナーの会話がすれ違う、4軸の理由",
     description: "「なんで分かってくれないの」の裏には、性格の不一致ではなく4軸のズレがあります。決め方・気持ちの伝え方・喧嘩のペース・愛情表現、それぞれのすれ違いを解説します。",
 };

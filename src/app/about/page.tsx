@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/Button";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
+    alternates: { canonical: "/about" },
     title: "About & Guide",
     description: "16コミュニケーションタイプ診断の仕組みと使い方を解説。Power（主導権）・Warmth（温度感）・Speed（テンポ）・Volume（主張）の4つの軸であなたの会話スタイルを可視化します。",
     openGraph: {

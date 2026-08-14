@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/Button";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
+    alternates: { canonical: "/column/silence-awkward-i" },
     title: "沈黙が気まずいのは即興型(I)だから — 会話の\"間\"との付き合い方",
     description: "友人との雑談中、数秒の沈黙が怖くて何か喋ってしまう。それは性格の弱さではなく、即興型(I)というテンポのクセです。沈黙との付き合い方を紹介します。",
 };

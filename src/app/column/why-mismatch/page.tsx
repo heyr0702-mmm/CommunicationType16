@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/Button";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
+    alternates: { canonical: "/column/why-mismatch" },
     title: "「相性が悪い」の正体 — 私たちはただ\"違うゲーム\"をしているだけ",
     description: "あの人と話が噛み合わないのは、性格でも相性でもありません。会話スタイルという\"別のゲーム\"をしているだけ。4つの軸で、すれ違いの正体をほどきます。",
 };

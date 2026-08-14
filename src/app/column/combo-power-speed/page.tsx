@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/Button";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
+    alternates: { canonical: "/column/combo-power-speed" },
     title: "主導型(D)×熟考型(S)がすれ違う理由と、ルールのチューニング法",
     description: "「早く決めて」というDと「まだ考えてる」というS。急かされる方も急かす方もつらいこのすれ違いは、性格ではなくテンポの設定違いです。",
 };
